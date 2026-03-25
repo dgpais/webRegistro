@@ -308,7 +308,6 @@
             <p>¿No tienes una cuenta?</p>
             <a href="register.html" class="register-btn">Regístrate aquí</a>
             <br>
-            <a href="home.html" class="register-btn" style="margin-top: 1rem; display: inline-block;">Volver a Home</a>
         </div>
     </div>
 
@@ -352,12 +351,12 @@
                 // Usuario por defecto
                 sessionStorage.setItem("authenticated", "true");
                 sessionStorage.setItem("username", "User");
-                window.location.href = "private.html";
+                window.location.href = "home.html";
             } else if (registeredUser && password === registeredUser.password) {
                 // Usuario registrado con sus credenciales
                 sessionStorage.setItem("authenticated", "true");
                 sessionStorage.setItem("username", registeredUser.nombre);
-                window.location.href = "private.html";
+                window.location.href = "home.html";
             } else if (registeredUser) {
                 errorMessage.textContent = "Contraseña incorrecta";
                 errorMessage.style.display = "block";
