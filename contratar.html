@@ -17,6 +17,13 @@
             position: relative;
             overflow: hidden;
         }
+            html, body {
+                font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+                background: linear-gradient(135deg, #7a9b9e 0%, #6b8b8e 50%, #5c7b7e 100%);
+                margin: 0;
+                height: 100vh;
+                overflow-y: auto;
+            }
         body::before {
             content: "";
             position: absolute;
@@ -200,6 +207,24 @@
                 </div>
             </fieldset>
             <button type="submit" class="submit-btn">Contratar</button>
+                    <button type="button" class="cancel-btn" onclick="window.location.href='home.html'">Cancelar</button>
+                        .cancel-btn {
+                            background: #ef4855;
+                            color: #fff;
+                            border: none;
+                            border-radius: 8px;
+                            font-weight: 600;
+                            padding: 0.6rem 1.6rem;
+                            margin-left: 1.2rem;
+                            margin-top: 1.2rem;
+                            font-size: 1.08rem;
+                            cursor: pointer;
+                            box-shadow: 0 2px 8px rgba(239,72,85,0.10);
+                            transition: background 0.2s;
+                        }
+                        .cancel-btn:hover {
+                            background: #c62828;
+                        }
                 <script>
                 document.querySelector('form').addEventListener('submit', function(e) {
                     e.preventDefault();
