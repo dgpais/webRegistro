@@ -282,6 +282,7 @@
                     alt="izertis" />
                 Búsqueda Alojamiento Rural
             </span>
+            <button id="homeBtn" class="logout-btn" style="margin-right: 1rem; background: linear-gradient(135deg, #7a9b9e 0%, #6b8b8e 100%);">Home</button>
             <button id="logoutBtn" class="logout-btn">Cerrar sesión</button>
         </div>
 
@@ -458,6 +459,10 @@
         const pagination = document.getElementById("pagination");
         const resultsInfo = document.getElementById("resultsInfo");
 
+        // Botón Home
+        document.getElementById("homeBtn").addEventListener("click", function () {
+            window.location.href = "home.html";
+        });
         // Logout
         logoutBtn.addEventListener("click", function () {
             // Limpiar sesión
