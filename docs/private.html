@@ -1,0 +1,569 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zona Privada</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg,
+                    #7a9b9e 0%,
+                    #6b8b8e 50%,
+                    #5c7b7e 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle,
+                    rgba(239, 72, 85, 0.15),
+                    transparent);
+            border-radius: 50%;
+            top: -200px;
+            right: -200px;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        body::after {
+            content: "";
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle,
+                    rgba(122, 155, 158, 0.2),
+                    transparent);
+            border-radius: 50%;
+            bottom: -150px;
+            left: -150px;
+            animation: float 10s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(30px);
+            }
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+            width: 100%;
+            max-width: 1200px;
+            position: relative;
+            z-index: 1;
+            animation: slideIn 0.5s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .welcome {
+            font-size: 1.5rem;
+            color: #1a202c;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-small {
+            width: 40px;
+            height: 40px;
+        }
+
+        .logout-btn {
+            background: linear-gradient(135deg, #ef4855 0%, #e63946 100%);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(239, 72, 85, 0.3);
+        }
+
+        .logout-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(239, 72, 85, 0.5);
+            background: linear-gradient(135deg, #e63946 0%, #d62839 100%);
+        }
+
+        .search-container {
+            margin-bottom: 2rem;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: #f7fafc;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: #ef4855;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(239, 72, 85, 0.1);
+        }
+
+        .results-info {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: #4a5568;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .table-wrapper {
+            overflow-x: auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .products-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 2rem;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .products-table th,
+        .products-table td {
+            padding: 1.25rem;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .products-table th {
+            background: linear-gradient(135deg, #7a9b9e 0%, #6b8b8e 100%);
+            font-weight: 700;
+            color: white;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+        }
+
+        .products-table tbody tr {
+            transition: all 0.3s ease;
+        }
+
+        .products-table tbody tr:hover {
+            background: #f7fafc;
+            transform: scale(1.01);
+        }
+
+        .products-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .pagination button {
+            padding: 0.75rem 1.25rem;
+            border: 2px solid #7a9b9e;
+            background: white;
+            color: #7a9b9e;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .pagination button:hover:not(:disabled) {
+            background: #7a9b9e;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(122, 155, 158, 0.3);
+        }
+
+        .pagination button.active {
+            background: linear-gradient(135deg, #ef4855 0%, #e63946 100%);
+            color: white;
+            border-color: #ef4855;
+            box-shadow: 0 4px 15px rgba(239, 72, 85, 0.3);
+        }
+
+        .pagination button:disabled {
+            border-color: #cbd5e0;
+            color: #cbd5e0;
+            cursor: not-allowed;
+            background: white;
+        }
+
+        .pagination button:disabled:hover {
+            transform: none;
+            box-shadow: none;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.5rem;
+            }
+
+            .header {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .products-table th,
+            .products-table td {
+                padding: 0.75rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="welcome">
+                <img class="logo-small"
+                    src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjgwIiBoZWlnaHQ9IjI4MCIgdmlld0JveD0iMCAwIDI4MCAyODAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyODAiIGhlaWdodD0iMjgwIiByeD0iMTAiIGZpbGw9IiNGRjU1NjYiLz4KPHRleHQgeD0iNTAlIiB5PSI1OCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSI3MCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIj5pemVydGlzPC90ZXh0Pgo8L3N2Zz4="
+                    alt="izertis" />
+                ¡Hola, User!
+            </span>
+            <button id="logoutBtn" class="logout-btn">Cerrar sesión</button>
+        </div>
+
+        <div class="search-container">
+            <input type="text" id="searchInput" class="search-input" placeholder="🔍 Filtrar por marca o modelo..." />
+        </div>
+
+        <div class="results-info" id="resultsInfo"></div>
+
+        <div class="table-wrapper">
+            <table class="products-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Marca</th>
+                        <th>Modelo</th>
+                        <th>Stock</th>
+                        <th>Precio Unitario</th>
+                    </tr>
+                </thead>
+                <tbody id="productsTable"></tbody>
+            </table>
+        </div>
+
+        <div class="pagination" id="pagination"></div>
+    </div>
+
+    <script>
+        // Verificar autenticación al cargar la página
+        if (!sessionStorage.getItem("authenticated")) {
+            alert("Debe iniciar sesión para acceder a esta página");
+            window.location.href = "login.html";
+        }
+
+        // Datos de productos
+        const products = [
+            {
+                id: 1,
+                marca: "Samsung",
+                modelo: "Galaxy S21",
+                stock: 45,
+                precio: 799.99,
+            },
+            {
+                id: 2,
+                marca: "Apple",
+                modelo: "iPhone 13",
+                stock: 32,
+                precio: 899.99,
+            },
+            { id: 3, marca: "Xiaomi", modelo: "Mi 11", stock: 67, precio: 649.99 },
+            {
+                id: 4,
+                marca: "Huawei",
+                modelo: "P40 Pro",
+                stock: 23,
+                precio: 749.99,
+            },
+            { id: 5, marca: "OnePlus", modelo: "9 Pro", stock: 18, precio: 869.99 },
+            {
+                id: 6,
+                marca: "Sony",
+                modelo: "Xperia 1 III",
+                stock: 15,
+                precio: 999.99,
+            },
+            {
+                id: 7,
+                marca: "Google",
+                modelo: "Pixel 6",
+                stock: 41,
+                precio: 599.99,
+            },
+            {
+                id: 8,
+                marca: "Motorola",
+                modelo: "Edge 20",
+                stock: 29,
+                precio: 499.99,
+            },
+            {
+                id: 9,
+                marca: "Oppo",
+                modelo: "Find X3 Pro",
+                stock: 36,
+                precio: 789.99,
+            },
+            { id: 10, marca: "Vivo", modelo: "X60 Pro", stock: 52, precio: 699.99 },
+            {
+                id: 11,
+                marca: "Realme",
+                modelo: "GT Master",
+                stock: 44,
+                precio: 399.99,
+            },
+            { id: 12, marca: "Nokia", modelo: "XR20", stock: 31, precio: 549.99 },
+            {
+                id: 13,
+                marca: "Samsung",
+                modelo: "Galaxy Note 20",
+                stock: 19,
+                precio: 949.99,
+            },
+            {
+                id: 14,
+                marca: "Apple",
+                modelo: "iPhone 12 Mini",
+                stock: 27,
+                precio: 699.99,
+            },
+            {
+                id: 15,
+                marca: "Xiaomi",
+                modelo: "Redmi Note 10",
+                stock: 73,
+                precio: 199.99,
+            },
+            {
+                id: 16,
+                marca: "Huawei",
+                modelo: "Mate 40",
+                stock: 16,
+                precio: 849.99,
+            },
+            {
+                id: 17,
+                marca: "OnePlus",
+                modelo: "Nord 2",
+                stock: 38,
+                precio: 399.99,
+            },
+            {
+                id: 18,
+                marca: "Sony",
+                modelo: "Xperia 5 III",
+                stock: 22,
+                precio: 799.99,
+            },
+            {
+                id: 19,
+                marca: "Google",
+                modelo: "Pixel 5a",
+                stock: 35,
+                precio: 449.99,
+            },
+            {
+                id: 20,
+                marca: "Motorola",
+                modelo: "Moto G100",
+                stock: 48,
+                precio: 349.99,
+            },
+            { id: 21, marca: "Oppo", modelo: "Reno 6", stock: 26, precio: 429.99 },
+            { id: 22, marca: "Vivo", modelo: "V21", stock: 39, precio: 379.99 },
+            { id: 23, marca: "Realme", modelo: "8 Pro", stock: 55, precio: 279.99 },
+            { id: 24, marca: "Nokia", modelo: "G50", stock: 42, precio: 299.99 },
+            {
+                id: 25,
+                marca: "Samsung",
+                modelo: "Galaxy A52",
+                stock: 61,
+                precio: 349.99,
+            },
+        ];
+
+        let filteredProducts = [...products];
+        let currentPage = 1;
+        const itemsPerPage = 10;
+
+        // Elementos del DOM
+        const logoutBtn = document.getElementById("logoutBtn");
+        const searchInput = document.getElementById("searchInput");
+        const productsTable = document.getElementById("productsTable");
+        const pagination = document.getElementById("pagination");
+        const resultsInfo = document.getElementById("resultsInfo");
+
+        // Logout
+        logoutBtn.addEventListener("click", function () {
+            // Limpiar sesión
+            sessionStorage.removeItem("authenticated");
+            sessionStorage.removeItem("username");
+            window.location.href = "login.html";
+        });
+
+        // Búsqueda
+        searchInput.addEventListener("input", function () {
+            const searchTerm = this.value.toLowerCase();
+            filteredProducts = products.filter(
+                (product) =>
+                    product.marca.toLowerCase().includes(searchTerm) ||
+                    product.modelo.toLowerCase().includes(searchTerm),
+            );
+            currentPage = 1;
+            displayProducts();
+            displayPagination();
+            updateResultsInfo();
+        });
+
+        function displayProducts() {
+            const start = (currentPage - 1) * itemsPerPage;
+            const end = start + itemsPerPage;
+            const pageProducts = filteredProducts.slice(start, end);
+
+            productsTable.innerHTML = "";
+
+            pageProducts.forEach((product) => {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td><strong>${product.id}</strong></td>
+                    <td>${product.marca}</td>
+                    <td>${product.modelo}</td>
+                    <td><strong>${product.stock}</strong></td>
+                    <td><strong style="color: #ef4855;">€${product.precio.toFixed(2)}</strong></td>
+                `;
+                productsTable.appendChild(row);
+            });
+        }
+
+        function displayPagination() {
+            const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
+            pagination.innerHTML = "";
+
+            // Botón anterior
+            const prevBtn = document.createElement("button");
+            prevBtn.textContent = "Anterior";
+            prevBtn.disabled = currentPage === 1;
+            prevBtn.addEventListener("click", () => {
+                if (currentPage > 1) {
+                    currentPage--;
+                    displayProducts();
+                    displayPagination();
+                    updateResultsInfo();
+                }
+            });
+            pagination.appendChild(prevBtn);
+
+            // Botones de páginas
+            for (let i = 1; i <= totalPages; i++) {
+                const pageBtn = document.createElement("button");
+                pageBtn.textContent = i;
+                pageBtn.classList.toggle("active", i === currentPage);
+                pageBtn.addEventListener("click", () => {
+                    currentPage = i;
+                    displayProducts();
+                    displayPagination();
+                    updateResultsInfo();
+                });
+                pagination.appendChild(pageBtn);
+            }
+
+            // Botón siguiente
+            const nextBtn = document.createElement("button");
+            nextBtn.textContent = "Siguiente";
+            nextBtn.disabled = currentPage === totalPages;
+            nextBtn.addEventListener("click", () => {
+                if (currentPage < totalPages) {
+                    currentPage++;
+                    displayProducts();
+                    displayPagination();
+                    updateResultsInfo();
+                }
+            });
+            pagination.appendChild(nextBtn);
+        }
+
+        function updateResultsInfo() {
+            const start = (currentPage - 1) * itemsPerPage + 1;
+            const end = Math.min(start + itemsPerPage - 1, filteredProducts.length);
+            const total = filteredProducts.length;
+
+            if (total === 0) {
+                resultsInfo.textContent = "No se encontraron productos";
+            } else {
+                resultsInfo.textContent = `Mostrando ${start}-${end} de ${total} productos`;
+            }
+        }
+
+        // Inicializar la página
+        displayProducts();
+        displayPagination();
+        updateResultsInfo();
+    </script>
+</body>
+
+</html>
