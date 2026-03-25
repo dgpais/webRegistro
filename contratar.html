@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contratar Viaje</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #7a9b9e 0%, #6b8b8e 50%, #5c7b7e 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        body::before {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(239, 72, 85, 0.15), transparent);
+            border-radius: 50%;
+            top: -200px;
+            right: -200px;
+            animation: float 8s ease-in-out infinite;
+        }
+        body::after {
+            content: "";
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(122, 155, 158, 0.2), transparent);
+            border-radius: 50%;
+            bottom: -150px;
+            left: -150px;
+            animation: float 10s ease-in-out infinite reverse;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(30px); }
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+            max-width: 650px;
+            width: 100%;
+            padding: 40px 30px 30px 30px;
+            position: relative;
+            z-index: 1;
+            animation: slideIn 0.5s ease-out;
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        h1 {
+            color: #1a202c;
+            margin-bottom: 1.2rem;
+            font-size: 1.7rem;
+            font-weight: 700;
+            text-align: center;
+        }
+        .form-block {
+            background: #f7fafc;
+            border-radius: 14px;
+            padding: 1.5rem 1.2rem 1.2rem 1.2rem;
+            margin-bottom: 1.7rem;
+            box-shadow: 0 2px 8px rgba(122,155,158,0.07);
+        }
+        .form-block legend {
+            font-weight: 700;
+            color: #1976d2;
+            font-size: 1.1rem;
+            margin-bottom: 0.7rem;
+        }
+        .form-group {
+            margin-bottom: 1.1rem;
+        }
+        label {
+            display: block;
+            color: #4a5568;
+            font-weight: 600;
+            margin-bottom: 7px;
+            font-size: 0.97rem;
+        }
+        input[type="text"], input[type="number"], input[type="date"], select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            font-size: 14px;
+            background: #fff;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+        input[type="text"]:focus, input[type="number"]:focus, input[type="date"]:focus, select:focus {
+            outline: none;
+            border-color: #ef4855;
+            background: #f7fafc;
+            box-shadow: 0 0 0 3px rgba(239, 72, 85, 0.1);
+            transform: translateY(-2px);
+        }
+        .submit-btn {
+            width: 100%;
+            padding: 1rem 0;
+            background: linear-gradient(135deg, #7a9b9e 0%, #6b8b8e 100%);
+            color: #fff;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.15rem;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 1.2rem;
+            box-shadow: 0 4px 15px rgba(122, 155, 158, 0.15);
+            transition: background 0.2s;
+        }
+        .submit-btn:hover {
+            background: linear-gradient(135deg, #ef4855 0%, #e63946 100%);
+        }
+        @media (max-width: 600px) {
+            .container { padding: 18px 4px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Contratar un Viaje</h1>
+        <form>
+                <div id="mensajeError" style="display:none;color:#ef4855;font-weight:700;text-align:center;margin-bottom:1rem;font-size:1.08rem;"></div>
+            <fieldset class="form-block">
+                <legend>Datos personales</legend>
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" required />
+                </div>
+                <div class="form-group">
+                    <label for="apellidos">Apellidos</label>
+                    <input type="text" id="apellidos" name="apellidos" required />
+                </div>
+                <div class="form-group">
+                    <label for="dni">DNI</label>
+                    <input type="text" id="dni" name="dni" required />
+                </div>
+                <div class="form-group">
+                    <label for="edad">Edad</label>
+                    <input type="number" id="edad" name="edad" min="0" max="120" required />
+                </div>
+                <div class="form-group">
+                    <label for="nacionalidad">Nacionalidad</label>
+                    <input type="text" id="nacionalidad" name="nacionalidad" required />
+                </div>
+            </fieldset>
+            <fieldset class="form-block">
+                <legend>Datos del viaje</legend>
+                <div class="form-group">
+                    <label for="viaje">Viaje</label>
+                    <input type="text" id="viaje" name="viaje" required />
+                </div>
+                <div class="form-group">
+                    <label for="numPersonas">Número de personas</label>
+                    <input type="number" id="numPersonas" name="numPersonas" min="1" max="20" required />
+                </div>
+                <div class="form-group">
+                    <label for="fecha">Fecha</label>
+                    <input type="date" id="fecha" name="fecha" required />
+                </div>
+                <div class="form-group">
+                    <label for="numNinos">Número de niños</label>
+                    <input type="number" id="numNinos" name="numNinos" min="0" max="10" />
+                </div>
+                <div class="form-group">
+                    <label for="edadNinos">Edad de los niños</label>
+                    <input type="text" id="edadNinos" name="edadNinos" placeholder="Ej: 3, 7, 10" />
+                </div>
+            </fieldset>
+            <fieldset class="form-block">
+                <legend>Datos de pago</legend>
+                <div class="form-group">
+                    <label for="cuenta">Número de cuenta bancaria</label>
+                    <input type="text" id="cuenta" name="cuenta" required />
+                </div>
+                <div class="form-group">
+                    <label for="control">Dígitos de control</label>
+                    <input type="text" id="control" name="control" maxlength="2" required />
+                </div>
+                <div class="form-group">
+                    <label for="tarjeta">Tipo de tarjeta</label>
+                    <select id="tarjeta" name="tarjeta" required>
+                        <option value="">Seleccione...</option>
+                        <option value="visa">Visa</option>
+                        <option value="mastercard">Mastercard</option>
+                        <option value="american">American Express</option>
+                    </select>
+                </div>
+            </fieldset>
+            <button type="submit" class="submit-btn">Contratar</button>
+                <script>
+                document.querySelector('form').addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    var campos = [
+                        'nombre', 'apellidos', 'dni', 'edad', 'nacionalidad',
+                        'viaje', 'numPersonas', 'fecha', 'cuenta', 'control', 'tarjeta'
+                    ];
+                    var vacio = false;
+                    campos.forEach(function(id) {
+                        var el = document.getElementById(id);
+                        if (!el.value || el.value.trim() === '') vacio = true;
+                    });
+                    if (vacio) {
+                        document.getElementById('mensajeError').style.display = 'block';
+                        document.getElementById('mensajeError').textContent = 'Faltan datos, por favor revise los campos';
+                        return false;
+                    } else {
+                        document.getElementById('mensajeError').style.display = 'none';
+                        // Aquí iría el envío real del formulario
+                        alert('¡Formulario enviado correctamente!');
+                    }
+                });
+                </script>
+        </form>
+    </div>
+</body>
+</html>
