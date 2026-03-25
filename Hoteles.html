@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hoteles</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #7a9b9e 0%, #6b8b8e 50%, #5c7b7e 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        body::before {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(239, 72, 85, 0.15), transparent);
+            border-radius: 50%;
+            top: -200px;
+            right: -200px;
+            animation: float 8s ease-in-out infinite;
+        }
+        body::after {
+            content: "";
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(122, 155, 158, 0.2), transparent);
+            border-radius: 50%;
+            bottom: -150px;
+            left: -150px;
+            animation: float 10s ease-in-out infinite reverse;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(30px); }
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+            width: 100%;
+            max-width: 600px;
+            position: relative;
+            z-index: 1;
+            animation: slideIn 0.5s ease-out;
+            text-align: center;
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .page-title {
+            font-size: 2rem;
+            color: #1a202c;
+            font-weight: 700;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="page-title">Hoteles</div>
+        <div style="margin-bottom:2rem;">
+            <input type="text" id="searchInput" placeholder="🔍 Buscar hotel..." style="width:80%;padding:1rem;border-radius:12px;border:2px solid #e2e8f0;font-size:1rem;">
+        </div>
+        <div id="resultsInfo" style="margin-bottom:1.5rem;color:#4a5568;font-weight:600;font-size:0.95rem;text-align:center;"></div>
+        <div id="resultsList" style="text-align:left;"></div>
+        <script>
+        const hoteles = [
+            { nombre: "Hotel Central", ubicacion: "Madrid", estrellas: 4 },
+            { nombre: "Gran Hotel Playa", ubicacion: "Alicante", estrellas: 5 },
+            { nombre: "Hotel Rural Sierra", ubicacion: "Granada", estrellas: 3 },
+            { nombre: "Hotel Boutique Sol", ubicacion: "Barcelona", estrellas: 4 },
+            { nombre: "Hotel Mar Azul", ubicacion: "Málaga", estrellas: 3 }
+        ];
+        const searchInput = document.getElementById('searchInput');
+        const resultsList = document.getElementById('resultsList');
+        const resultsInfo = document.getElementById('resultsInfo');
+        function mostrarResultados(filtrados) {
+            resultsList.innerHTML = '';
+            if (filtrados.length === 0) {
+                resultsInfo.textContent = 'No se encontraron resultados';
+                return;
+            }
+            resultsInfo.textContent = `Mostrando ${filtrados.length} resultado(s)`;
+            filtrados.forEach(h => {
+                const div = document.createElement('div');
+                div.style.marginBottom = '1rem';
+                div.innerHTML = `<strong>${h.nombre}</strong> - ${h.ubicacion} <span style='color:#ef4855;'>(${h.estrellas} estrellas)</span>`;
+                resultsList.appendChild(div);
+            });
+        }
+        function filtrar() {
+            const term = searchInput.value.toLowerCase();
+            const filtrados = hoteles.filter(h => h.nombre.toLowerCase().includes(term) || h.ubicacion.toLowerCase().includes(term));
+            mostrarResultados(filtrados);
+        }
+        searchInput.addEventListener('input', filtrar);
+        mostrarResultados(hoteles);
+        </script>
+    </div>
+</body>
+</html>

@@ -280,13 +280,13 @@
                 <img class="logo-small"
                     src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjgwIiBoZWlnaHQ9IjI4MCIgdmlld0JveD0iMCAwIDI4MCAyODAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyODAiIGhlaWdodD0iMjgwIiByeD0iMTAiIGZpbGw9IiNGRjU1NjYiLz4KPHRleHQgeD0iNTAlIiB5PSI1OCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSI3MCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIj5pemVydGlzPC90ZXh0Pgo8L3N2Zz4="
                     alt="izertis" />
-                ¡Hola, User!
+                Búsqueda Alojamiento Rural
             </span>
             <button id="logoutBtn" class="logout-btn">Cerrar sesión</button>
         </div>
 
         <div class="search-container">
-            <input type="text" id="searchInput" class="search-input" placeholder="🔍 Filtrar por marca o modelo..." />
+            <input type="text" id="searchInput" class="search-input" placeholder="🔍 Filtrar por CCAA o Nombre Alojamiento..." />
         </div>
 
         <div class="results-info" id="resultsInfo"></div>
@@ -296,10 +296,10 @@
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Marca</th>
-                        <th>Modelo</th>
-                        <th>Stock</th>
-                        <th>Precio Unitario</th>
+                        <th>CCAA</th>
+                        <th>Alojamiento</th>
+                        <th>Plazas disponibles</th>
+                        <th>Precio unitario</th>
                     </tr>
                 </thead>
                 <tbody id="productsTable"></tbody>
@@ -320,130 +320,130 @@
         const products = [
             {
                 id: 1,
-                marca: "Samsung",
-                modelo: "Galaxy S21",
-                stock: 45,
-                precio: 799.99,
+                marca: "Cataluña",
+                modelo: "Casa miraflores",
+                stock: 4,
+                precio: 79,
             },
             {
                 id: 2,
-                marca: "Apple",
-                modelo: "iPhone 13",
-                stock: 32,
-                precio: 899.99,
+                marca: "Castilla y León",
+                modelo: "Casa rural el pinar",
+                stock: 12,
+                precio: 59.99,
             },
-            { id: 3, marca: "Xiaomi", modelo: "Mi 11", stock: 67, precio: 649.99 },
+            { id: 3, marca: "Andalucia", modelo: "Los caballos blancos", stock: 7, precio: 649.99 },
             {
                 id: 4,
-                marca: "Huawei",
-                modelo: "P40 Pro",
+                marca: "Andalucia",
+                modelo: "Cortijo el sol",
                 stock: 23,
-                precio: 749.99,
+                precio: 42,
             },
-            { id: 5, marca: "OnePlus", modelo: "9 Pro", stock: 18, precio: 869.99 },
+            { id: 5, marca: "Asturias", modelo: "9 Pro", stock: 18, precio: 869.99 },
             {
                 id: 6,
-                marca: "Sony",
-                modelo: "Xperia 1 III",
+                marca: "Extremadura",
+                modelo: "Hostal el descanso",
                 stock: 15,
-                precio: 999.99,
+                precio: 75,
             },
             {
                 id: 7,
-                marca: "Google",
-                modelo: "Pixel 6",
-                stock: 41,
-                precio: 599.99,
+                marca: "Euskadi",
+                modelo: "Caserio La montaña",
+                stock: 18,
+                precio: 85,
             },
             {
                 id: 8,
-                marca: "Motorola",
-                modelo: "Edge 20",
+                marca: "Galicia",
+                modelo: "Hostal Rias Baixas",
                 stock: 29,
-                precio: 499.99,
+                precio: 123,
             },
             {
                 id: 9,
-                marca: "Oppo",
-                modelo: "Find X3 Pro",
+                marca: "Galicia",
+                modelo: "Casa El Peregrino",
                 stock: 36,
-                precio: 789.99,
+                precio: 189.99,
             },
-            { id: 10, marca: "Vivo", modelo: "X60 Pro", stock: 52, precio: 699.99 },
+            { id: 10, marca: "Asturias", modelo: "Hostal El Lago", stock: 22, precio: 699.99 },
             {
                 id: 11,
-                marca: "Realme",
-                modelo: "GT Master",
+                marca: "Aragon",
+                modelo: "Alojamiento Rural Los Mallos",
                 stock: 44,
-                precio: 399.99,
+                precio: 49.50,
             },
-            { id: 12, marca: "Nokia", modelo: "XR20", stock: 31, precio: 549.99 },
+            { id: 12, marca: "Murcia", modelo: "Vista Mar Menor", stock: 31, precio: 549.99 },
             {
                 id: 13,
-                marca: "Samsung",
-                modelo: "Galaxy Note 20",
+                marca: "Cataluña",
+                modelo: "Can el Camino",
                 stock: 19,
-                precio: 949.99,
+                precio: 149.99,
             },
             {
                 id: 14,
-                marca: "Apple",
-                modelo: "iPhone 12 Mini",
-                stock: 27,
-                precio: 699.99,
+                marca: "Castilla y León",
+                modelo: "Albergue Carlos V",
+                stock: 7,
+                precio: 64.99,
             },
             {
                 id: 15,
-                marca: "Xiaomi",
-                modelo: "Redmi Note 10",
-                stock: 73,
-                precio: 199.99,
+                marca: "Madrid",
+                modelo: "Hostal Madrid Central",
+                stock: 23,
+                precio: 105,
             },
             {
                 id: 16,
-                marca: "Huawei",
-                modelo: "Mate 40",
+                marca: "Cantabria",
+                modelo: "Hostal Cantabria",
                 stock: 16,
-                precio: 849.99,
+                precio: 126,
             },
             {
                 id: 17,
-                marca: "OnePlus",
-                modelo: "Nord 2",
+                marca: "Euskadi",
+                modelo: "Caserio Nord",
                 stock: 38,
-                precio: 399.99,
+                precio: 110,
             },
             {
                 id: 18,
-                marca: "Sony",
-                modelo: "Xperia 5 III",
+                marca: "Asturias",
+                modelo: "Hostal Asturias",
                 stock: 22,
-                precio: 799.99,
+                precio: 75.99,
             },
             {
                 id: 19,
-                marca: "Google",
-                modelo: "Pixel 5a",
+                marca: "Castilla la Mancha",
+                modelo: "Alojamiento Rural El Quijote",
                 stock: 35,
-                precio: 449.99,
+                precio: 123.99,
             },
             {
                 id: 20,
-                marca: "Motorola",
-                modelo: "Moto G100",
-                stock: 48,
-                precio: 349.99,
+                marca: "Comunidad Valenciana",
+                modelo: "Alojamiento Rural Costa Blanca",
+                stock: 19,
+                precio: 130,
             },
-            { id: 21, marca: "Oppo", modelo: "Reno 6", stock: 26, precio: 429.99 },
-            { id: 22, marca: "Vivo", modelo: "V21", stock: 39, precio: 379.99 },
-            { id: 23, marca: "Realme", modelo: "8 Pro", stock: 55, precio: 279.99 },
-            { id: 24, marca: "Nokia", modelo: "G50", stock: 42, precio: 299.99 },
+            { id: 21, marca: "Andalucia", modelo: "Casa rural Andalucia", stock: 26, precio: 59 },
+            { id: 22, marca: "Extremadura", modelo: "Hostal Plasencia", stock: 39, precio: 46 },
+            { id: 23, marca: "Cantabria", modelo: "Caserio Los Pasiegos", stock: 55, precio: 68 },
+            { id: 24, marca: "Navarra", modelo: "Alojamiento Rural La Torre", stock: 42, precio: 46 },
             {
                 id: 25,
-                marca: "Samsung",
-                modelo: "Galaxy A52",
-                stock: 61,
-                precio: 349.99,
+                marca: "Navarra",
+                modelo: "Alojamiento Rural Navarra",
+                stock: 31,
+                precio: 98.99,
             },
         ];
 
@@ -553,9 +553,9 @@
             const total = filteredProducts.length;
 
             if (total === 0) {
-                resultsInfo.textContent = "No se encontraron productos";
+                resultsInfo.textContent = "No se encontraron resultados";
             } else {
-                resultsInfo.textContent = `Mostrando ${start}-${end} de ${total} productos`;
+                resultsInfo.textContent = `Mostrando ${start}-${end} de ${total} resultados`;
             }
         }
 
