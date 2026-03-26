@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Opciones de Seguro de Viaje</title>
     <style>
+                .td-seguro-activo {
+                    background: #ffebee !important;
+                    border: 2.5px solid #d32f2f !important;
+                    box-shadow: 0 2px 12px rgba(211,47,47,0.13);
+                }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -108,6 +113,14 @@
     <script>
     document.querySelectorAll('.btn-incluir').forEach(function(btn) {
         btn.addEventListener('click', function() {
+            // Quitar el resaltado de cualquier celda previamente seleccionada
+            document.querySelectorAll('td.td-seguro-activo').forEach(function(td) {
+                td.classList.remove('td-seguro-activo');
+            });
+            // Resaltar la celda actual
+            var td = btn.closest('td');
+            if (td) td.classList.add('td-seguro-activo');
+            // Mostrar mensaje
             var msg = document.getElementById('mensaje-contratado');
             msg.style.display = 'block';
             msg.scrollIntoView({behavior:'smooth', block:'end'});
