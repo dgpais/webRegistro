@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Viajes Románticos</title>
+    <title>Escapadas Culturales</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -70,9 +70,9 @@
     </style>
 </head>
 <body>
-    <a href="../home.html " style="position:absolute;top:30px;left:30px;z-index:2;text-decoration:none;background:#fff;padding:0.6rem 1.2rem;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.08);font-weight:600;color:#1a202c;transition:background 0.2s;">⟵ Volver a Home</a>
+    <a href="../home.html" style="position:absolute;top:30px;left:30px;z-index:2;text-decoration:none;background:#fff;padding:0.6rem 1.2rem;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.08);font-weight:600;color:#1a202c;transition:background 0.2s;">⟵ Volver a Home</a>
     <div class="container">
-        <div class="page-title">VIAJES ROMÁNTICOS</div>
+        <div class="page-title">ESCAPADAS CULTURALES</div>
         <!-- Contenido aquí -->
             <table style="width:100%;border-collapse:separate;border-spacing:1.5rem 1.5rem;text-align:left;margin-top:1.5rem;table-layout:fixed;">
                 <tr style="background:#e3f2fd;">
@@ -82,57 +82,20 @@
                 </tr>
                 <tr>
                     <td style="vertical-align:top;padding:1.2rem 1.2rem 1.2rem 1.5rem;background:#e3f2fd;">
-                        <b>París y el Sena</b><br>
-                        Escapada romántica a París con crucero nocturno por el Sena, cena gourmet y alojamiento en hotel boutique. Ideal para parejas que buscan una experiencia mágica en la ciudad del amor.
+                        <b>Madrid y sus Museos</b><br>
+                        Fin de semana cultural en Madrid con entradas al Museo del Prado, Reina Sofía y Thyssen. Incluye visita guiada y alojamiento céntrico.
                     </td>
                     <td style="vertical-align:top;padding:1.2rem 1.2rem 1.2rem 1.5rem;background:#e3f2fd;">
                         1. 2 personas, 2 noches<br>
-                        2. 2 personas, 3 noches<br>
-                        3. 2 personas, 1 semana<br>
-                        4. 4 personas, 1 semana (dos parejas)
+                        2. 4 personas, 2 noches<br>
+                        3. 2 personas, 4 noches
                     </td>
                     <td style="vertical-align:top;padding:1.2rem 1.2rem 1.2rem 1.5rem;background:#fff;">
                         <form onsubmit="event.preventDefault();window.location.href='reservaok.html';">
                             <div style="display:flex;flex-direction:column;gap:0.7rem;align-items:flex-start;">
                                 <div>
-                                    <label for="opcion-paris">Opción:</label>
-                                    <select id="opcion-paris" name="opcion-paris" style="margin:0 0.7rem 0 0.7rem;">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                    </select>
-                                </div>
-                                <div style="display:flex;align-items:center;gap:1.2rem;">
-                                    <span style="font-size:0.98rem;font-weight:600;min-width:90px;">Transporte:</span>
-                                    <label style="margin:0;"><input type="radio" name="transporte-paris" value="avion" required> Avión</label>
-                                    <label style="margin:0;"><input type="radio" name="transporte-paris" value="tren"> Tren</label>
-                                    <label style="margin:0;"><input type="radio" name="transporte-paris" value="sin"> Sin transporte</label>
-                                </div>
-                                <div>
-                                    <label><input type="checkbox" name="alojamiento-paris" checked> Incluir alojamiento</label>
-                                </div>
-                                <button type="submit" style="background:#ef4855;color:#fff;padding:0.5rem 1.2rem;border:none;border-radius:8px;font-weight:600;cursor:pointer;">Contratar</button>
-                            </div>
-                        </form>
-                    </td>
-                </tr>
-                <tr>
-                    <td style="vertical-align:top;padding:1.2rem 1.2rem 1.2rem 1.5rem;background:#e3f2fd;">
-                        <b>Venecia de Ensueño</b><br>
-                        Paseo en góndola por los canales de Venecia, cena a la luz de las velas y estancia en hotel con vistas al Gran Canal. Perfecto para aniversarios o pedidas de mano.
-                    </td>
-                    <td style="vertical-align:top;padding:1.2rem 1.2rem 1.2rem 1.5rem;background:#e3f2fd;">
-                        1. 2 personas, 2 noches<br>
-                        2. 2 personas, 4 noches<br>
-                        3. 2 personas, 1 semana
-                    </td>
-                    <td style="vertical-align:top;padding:1.2rem 1.2rem 1.2rem 1.5rem;background:#fff;">
-                        <form onsubmit="event.preventDefault();window.location.href='reservaok.html';">
-                            <div style="display:flex;flex-direction:column;gap:0.7rem;align-items:flex-start;">
-                                <div>
-                                    <label for="opcion-venecia">Opción:</label>
-                                    <select id="opcion-venecia" name="opcion-venecia" style="margin:0 0.7rem 0 0.7rem;">
+                                    <label for="opcion-madrid">Opción:</label>
+                                    <select id="opcion-madrid" name="opcion-madrid" style="margin:0 0.7rem 0 0.7rem;">
                                         <option>1</option>
                                         <option>2</option>
                                         <option>3</option>
@@ -140,12 +103,12 @@
                                 </div>
                                 <div style="display:flex;align-items:center;gap:1.2rem;">
                                     <span style="font-size:0.98rem;font-weight:600;min-width:90px;">Transporte:</span>
-                                    <label style="margin:0;"><input type="radio" name="transporte-venecia" value="avion" required> Avión</label>
-                                    <label style="margin:0;"><input type="radio" name="transporte-venecia" value="tren"> Tren</label>
-                                    <label style="margin:0;"><input type="radio" name="transporte-venecia" value="sin"> Sin transporte</label>
+                                    <label style="margin:0;"><input type="radio" name="transporte-madrid" value="avion" required> Avión</label>
+                                    <label style="margin:0;"><input type="radio" name="transporte-madrid" value="tren"> Tren</label>
+                                    <label style="margin:0;"><input type="radio" name="transporte-madrid" value="sin"> Sin transporte</label>
                                 </div>
                                 <div>
-                                    <label><input type="checkbox" name="alojamiento-venecia" checked> Incluir alojamiento</label>
+                                    <label><input type="checkbox" name="alojamiento-madrid" checked> Incluir alojamiento</label>
                                 </div>
                                 <button type="submit" style="background:#ef4855;color:#fff;padding:0.5rem 1.2rem;border:none;border-radius:8px;font-weight:600;cursor:pointer;">Contratar</button>
                             </div>
@@ -154,31 +117,33 @@
                 </tr>
                 <tr>
                     <td style="vertical-align:top;padding:1.2rem 1.2rem 1.2rem 1.5rem;background:#e3f2fd;">
-                        <b>Praga y su Magia</b><br>
-                        Descubre la ciudad de Praga con su castillo, puentes y calles empedradas. Incluye cena romántica y paseo nocturno por el río Moldava. Un destino de cuento para parejas.
+                        <b>Ruta por Castilla y León</b><br>
+                        Descubre el patrimonio de Castilla y León: Salamanca, Ávila, Segovia y Burgos. Incluye visitas guiadas, entradas a monumentos y alojamiento en paradores.
                     </td>
                     <td style="vertical-align:top;padding:1.2rem 1.2rem 1.2rem 1.5rem;background:#e3f2fd;">
-                        1. 2 personas, 2 noches<br>
-                        2. 2 personas, 5 noches
+                        1. 2 personas, 4 noches<br>
+                        2. 4 personas, 7 noches<br>
+                        3. 2 personas, 7 noches
                     </td>
                     <td style="vertical-align:top;padding:1.2rem 1.2rem 1.2rem 1.5rem;background:#fff;">
                         <form onsubmit="event.preventDefault();window.location.href='reservaok.html';">
                             <div style="display:flex;flex-direction:column;gap:0.7rem;align-items:flex-start;">
                                 <div>
-                                    <label for="opcion-praga">Opción:</label>
-                                    <select id="opcion-praga" name="opcion-praga" style="margin:0 0.7rem 0 0.7rem;">
+                                    <label for="opcion-castilla">Opción:</label>
+                                    <select id="opcion-castilla" name="opcion-castilla" style="margin:0 0.7rem 0 0.7rem;">
                                         <option>1</option>
                                         <option>2</option>
+                                        <option>3</option>
                                     </select>
                                 </div>
                                 <div style="display:flex;align-items:center;gap:1.2rem;">
                                     <span style="font-size:0.98rem;font-weight:600;min-width:90px;">Transporte:</span>
-                                    <label style="margin:0;"><input type="radio" name="transporte-praga" value="avion" required> Avión</label>
-                                    <label style="margin:0;"><input type="radio" name="transporte-praga" value="tren"> Tren</label>
-                                    <label style="margin:0;"><input type="radio" name="transporte-praga" value="sin"> Sin transporte</label>
+                                    <label style="margin:0;"><input type="radio" name="transporte-castilla" value="avion" required> Avión</label>
+                                    <label style="margin:0;"><input type="radio" name="transporte-castilla" value="tren"> Tren</label>
+                                    <label style="margin:0;"><input type="radio" name="transporte-castilla" value="sin"> Sin transporte</label>
                                 </div>
                                 <div>
-                                    <label><input type="checkbox" name="alojamiento-praga" checked> Incluir alojamiento</label>
+                                    <label><input type="checkbox" name="alojamiento-castilla" checked> Incluir alojamiento</label>
                                 </div>
                                 <button type="submit" style="background:#ef4855;color:#fff;padding:0.5rem 1.2rem;border:none;border-radius:8px;font-weight:600;cursor:pointer;">Contratar</button>
                             </div>
@@ -187,20 +152,20 @@
                 </tr>
                 <tr>
                     <td style="vertical-align:top;padding:1.2rem 1.2rem 1.2rem 1.5rem;background:#e3f2fd;">
-                        <b>Santorini Azul</b><br>
-                        Viaje a la isla griega de Santorini con alojamiento en hotel con vistas al mar, cena al atardecer y excursión en barco privado. Un paraíso para enamorados.
+                        <b>Florencia y la Toscana</b><br>
+                        Escapada cultural a Florencia y la Toscana, con visitas a museos, catas de vino y alojamiento en villa histórica. Arte, historia y gastronomía italiana.
                     </td>
                     <td style="vertical-align:top;padding:1.2rem 1.2rem 1.2rem 1.5rem;background:#e3f2fd;">
                         1. 2 personas, 3 noches<br>
-                        2. 2 personas, 5 noches<br>
-                        3. 2 personas, 1 semana
+                        2. 4 personas, 5 noches<br>
+                        3. 2 personas, 7 noches
                     </td>
                     <td style="vertical-align:top;padding:1.2rem 1.2rem 1.2rem 1.5rem;background:#fff;">
                         <form onsubmit="event.preventDefault();window.location.href='reservaok.html';">
                             <div style="display:flex;flex-direction:column;gap:0.7rem;align-items:flex-start;">
                                 <div>
-                                    <label for="opcion-santorini">Opción:</label>
-                                    <select id="opcion-santorini" name="opcion-santorini" style="margin:0 0.7rem 0 0.7rem;">
+                                    <label for="opcion-florencia">Opción:</label>
+                                    <select id="opcion-florencia" name="opcion-florencia" style="margin:0 0.7rem 0 0.7rem;">
                                         <option>1</option>
                                         <option>2</option>
                                         <option>3</option>
@@ -208,12 +173,12 @@
                                 </div>
                                 <div style="display:flex;align-items:center;gap:1.2rem;">
                                     <span style="font-size:0.98rem;font-weight:600;min-width:90px;">Transporte:</span>
-                                    <label style="margin:0;"><input type="radio" name="transporte-santorini" value="avion" required> Avión</label>
-                                    <label style="margin:0;"><input type="radio" name="transporte-santorini" value="tren"> Tren</label>
-                                    <label style="margin:0;"><input type="radio" name="transporte-santorini" value="sin"> Sin transporte</label>
+                                    <label style="margin:0;"><input type="radio" name="transporte-florencia" value="avion" required> Avión</label>
+                                    <label style="margin:0;"><input type="radio" name="transporte-florencia" value="tren"> Tren</label>
+                                    <label style="margin:0;"><input type="radio" name="transporte-florencia" value="sin"> Sin transporte</label>
                                 </div>
                                 <div>
-                                    <label><input type="checkbox" name="alojamiento-santorini" checked> Incluir alojamiento</label>
+                                    <label><input type="checkbox" name="alojamiento-florencia" checked> Incluir alojamiento</label>
                                 </div>
                                 <button type="submit" style="background:#ef4855;color:#fff;padding:0.5rem 1.2rem;border:none;border-radius:8px;font-weight:600;cursor:pointer;">Contratar</button>
                             </div>
@@ -222,31 +187,66 @@
                 </tr>
                 <tr>
                     <td style="vertical-align:top;padding:1.2rem 1.2rem 1.2rem 1.5rem;background:#e3f2fd;">
-                        <b>Granada y la Alhambra</b><br>
-                        Escapada romántica a Granada con visita privada a la Alhambra, cena con vistas y alojamiento en hotel con encanto en el Albaicín. Cultura, historia y pasión en el sur de España.
+                        <b>Atenas y Grecia Clásica</b><br>
+                        Viaje cultural por Atenas, Delfos y Meteora. Incluye entradas a yacimientos arqueológicos, guía experto y alojamiento en hoteles céntricos.
                     </td>
                     <td style="vertical-align:top;padding:1.2rem 1.2rem 1.2rem 1.5rem;background:#e3f2fd;">
-                        1. 2 personas, 2 noches<br>
-                        2. 2 personas, 4 noches
+                        1. 2 personas, 4 noches<br>
+                        2. 4 personas, 7 noches<br>
+                        3. 2 personas, 7 noches
                     </td>
                     <td style="vertical-align:top;padding:1.2rem 1.2rem 1.2rem 1.5rem;background:#fff;">
                         <form onsubmit="event.preventDefault();window.location.href='reservaok.html';">
                             <div style="display:flex;flex-direction:column;gap:0.7rem;align-items:flex-start;">
                                 <div>
-                                    <label for="opcion-granada">Opción:</label>
-                                    <select id="opcion-granada" name="opcion-granada" style="margin:0 0.7rem 0 0.7rem;">
+                                    <label for="opcion-atenas">Opción:</label>
+                                    <select id="opcion-atenas" name="opcion-atenas" style="margin:0 0.7rem 0 0.7rem;">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                    </select>
+                                </div>
+                                <div style="display:flex;align-items:center;gap:1.2rem;">
+                                    <span style="font-size:0.98rem;font-weight:600;min-width:90px;">Transporte:</span>
+                                    <label style="margin:0;"><input type="radio" name="transporte-atenas" value="avion" required> Avión</label>
+                                    <label style="margin:0;"><input type="radio" name="transporte-atenas" value="tren"> Tren</label>
+                                    <label style="margin:0;"><input type="radio" name="transporte-atenas" value="sin"> Sin transporte</label>
+                                </div>
+                                <div>
+                                    <label><input type="checkbox" name="alojamiento-atenas" checked> Incluir alojamiento</label>
+                                </div>
+                                <button type="submit" style="background:#ef4855;color:#fff;padding:0.5rem 1.2rem;border:none;border-radius:8px;font-weight:600;cursor:pointer;">Contratar</button>
+                            </div>
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="vertical-align:top;padding:1.2rem 1.2rem 1.2rem 1.5rem;background:#e3f2fd;">
+                        <b>Ruta por Andalucía Monumental</b><br>
+                        Escapada por Sevilla, Córdoba y Granada, con visitas a la Alhambra, la Mezquita y la Giralda. Incluye entradas, guía y alojamiento en hoteles con encanto.
+                    </td>
+                    <td style="vertical-align:top;padding:1.2rem 1.2rem 1.2rem 1.5rem;background:#e3f2fd;">
+                        1. 2 personas, 4 noches<br>
+                        2. 4 personas, 7 noches
+                    </td>
+                    <td style="vertical-align:top;padding:1.2rem 1.2rem 1.2rem 1.5rem;background:#fff;">
+                        <form onsubmit="event.preventDefault();window.location.href='reservaok.html';">
+                            <div style="display:flex;flex-direction:column;gap:0.7rem;align-items:flex-start;">
+                                <div>
+                                    <label for="opcion-andalucia">Opción:</label>
+                                    <select id="opcion-andalucia" name="opcion-andalucia" style="margin:0 0.7rem 0 0.7rem;">
                                         <option>1</option>
                                         <option>2</option>
                                     </select>
                                 </div>
                                 <div style="display:flex;align-items:center;gap:1.2rem;">
                                     <span style="font-size:0.98rem;font-weight:600;min-width:90px;">Transporte:</span>
-                                    <label style="margin:0;"><input type="radio" name="transporte-granada" value="avion" required> Avión</label>
-                                    <label style="margin:0;"><input type="radio" name="transporte-granada" value="tren"> Tren</label>
-                                    <label style="margin:0;"><input type="radio" name="transporte-granada" value="sin"> Sin transporte</label>
+                                    <label style="margin:0;"><input type="radio" name="transporte-andalucia" value="avion" required> Avión</label>
+                                    <label style="margin:0;"><input type="radio" name="transporte-andalucia" value="tren"> Tren</label>
+                                    <label style="margin:0;"><input type="radio" name="transporte-andalucia" value="sin"> Sin transporte</label>
                                 </div>
                                 <div>
-                                    <label><input type="checkbox" name="alojamiento-granada" checked> Incluir alojamiento</label>
+                                    <label><input type="checkbox" name="alojamiento-andalucia" checked> Incluir alojamiento</label>
                                 </div>
                                 <button type="submit" style="background:#ef4855;color:#fff;padding:0.5rem 1.2rem;border:none;border-radius:8px;font-weight:600;cursor:pointer;">Contratar</button>
                             </div>

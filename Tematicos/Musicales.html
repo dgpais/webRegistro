@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Viajes Románticos</title>
+    <title>Escapadas Musicales</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -70,9 +70,9 @@
     </style>
 </head>
 <body>
-    <a href="../home.html " style="position:absolute;top:30px;left:30px;z-index:2;text-decoration:none;background:#fff;padding:0.6rem 1.2rem;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.08);font-weight:600;color:#1a202c;transition:background 0.2s;">⟵ Volver a Home</a>
+    <a href="../home.html" style="position:absolute;top:30px;left:30px;z-index:2;text-decoration:none;background:#fff;padding:0.6rem 1.2rem;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.08);font-weight:600;color:#1a202c;transition:background 0.2s;">⟵ Volver a Home</a>
     <div class="container">
-        <div class="page-title">VIAJES ROMÁNTICOS</div>
+        <div class="page-title">ESCAPADAS MUSICALES</div>
         <!-- Contenido aquí -->
             <table style="width:100%;border-collapse:separate;border-spacing:1.5rem 1.5rem;text-align:left;margin-top:1.5rem;table-layout:fixed;">
                 <tr style="background:#e3f2fd;">
@@ -82,125 +82,20 @@
                 </tr>
                 <tr>
                     <td style="vertical-align:top;padding:1.2rem 1.2rem 1.2rem 1.5rem;background:#e3f2fd;">
-                        <b>París y el Sena</b><br>
-                        Escapada romántica a París con crucero nocturno por el Sena, cena gourmet y alojamiento en hotel boutique. Ideal para parejas que buscan una experiencia mágica en la ciudad del amor.
-                    </td>
-                    <td style="vertical-align:top;padding:1.2rem 1.2rem 1.2rem 1.5rem;background:#e3f2fd;">
-                        1. 2 personas, 2 noches<br>
-                        2. 2 personas, 3 noches<br>
-                        3. 2 personas, 1 semana<br>
-                        4. 4 personas, 1 semana (dos parejas)
-                    </td>
-                    <td style="vertical-align:top;padding:1.2rem 1.2rem 1.2rem 1.5rem;background:#fff;">
-                        <form onsubmit="event.preventDefault();window.location.href='reservaok.html';">
-                            <div style="display:flex;flex-direction:column;gap:0.7rem;align-items:flex-start;">
-                                <div>
-                                    <label for="opcion-paris">Opción:</label>
-                                    <select id="opcion-paris" name="opcion-paris" style="margin:0 0.7rem 0 0.7rem;">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                    </select>
-                                </div>
-                                <div style="display:flex;align-items:center;gap:1.2rem;">
-                                    <span style="font-size:0.98rem;font-weight:600;min-width:90px;">Transporte:</span>
-                                    <label style="margin:0;"><input type="radio" name="transporte-paris" value="avion" required> Avión</label>
-                                    <label style="margin:0;"><input type="radio" name="transporte-paris" value="tren"> Tren</label>
-                                    <label style="margin:0;"><input type="radio" name="transporte-paris" value="sin"> Sin transporte</label>
-                                </div>
-                                <div>
-                                    <label><input type="checkbox" name="alojamiento-paris" checked> Incluir alojamiento</label>
-                                </div>
-                                <button type="submit" style="background:#ef4855;color:#fff;padding:0.5rem 1.2rem;border:none;border-radius:8px;font-weight:600;cursor:pointer;">Contratar</button>
-                            </div>
-                        </form>
-                    </td>
-                </tr>
-                <tr>
-                    <td style="vertical-align:top;padding:1.2rem 1.2rem 1.2rem 1.5rem;background:#e3f2fd;">
-                        <b>Venecia de Ensueño</b><br>
-                        Paseo en góndola por los canales de Venecia, cena a la luz de las velas y estancia en hotel con vistas al Gran Canal. Perfecto para aniversarios o pedidas de mano.
-                    </td>
-                    <td style="vertical-align:top;padding:1.2rem 1.2rem 1.2rem 1.5rem;background:#e3f2fd;">
-                        1. 2 personas, 2 noches<br>
-                        2. 2 personas, 4 noches<br>
-                        3. 2 personas, 1 semana
-                    </td>
-                    <td style="vertical-align:top;padding:1.2rem 1.2rem 1.2rem 1.5rem;background:#fff;">
-                        <form onsubmit="event.preventDefault();window.location.href='reservaok.html';">
-                            <div style="display:flex;flex-direction:column;gap:0.7rem;align-items:flex-start;">
-                                <div>
-                                    <label for="opcion-venecia">Opción:</label>
-                                    <select id="opcion-venecia" name="opcion-venecia" style="margin:0 0.7rem 0 0.7rem;">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                    </select>
-                                </div>
-                                <div style="display:flex;align-items:center;gap:1.2rem;">
-                                    <span style="font-size:0.98rem;font-weight:600;min-width:90px;">Transporte:</span>
-                                    <label style="margin:0;"><input type="radio" name="transporte-venecia" value="avion" required> Avión</label>
-                                    <label style="margin:0;"><input type="radio" name="transporte-venecia" value="tren"> Tren</label>
-                                    <label style="margin:0;"><input type="radio" name="transporte-venecia" value="sin"> Sin transporte</label>
-                                </div>
-                                <div>
-                                    <label><input type="checkbox" name="alojamiento-venecia" checked> Incluir alojamiento</label>
-                                </div>
-                                <button type="submit" style="background:#ef4855;color:#fff;padding:0.5rem 1.2rem;border:none;border-radius:8px;font-weight:600;cursor:pointer;">Contratar</button>
-                            </div>
-                        </form>
-                    </td>
-                </tr>
-                <tr>
-                    <td style="vertical-align:top;padding:1.2rem 1.2rem 1.2rem 1.5rem;background:#e3f2fd;">
-                        <b>Praga y su Magia</b><br>
-                        Descubre la ciudad de Praga con su castillo, puentes y calles empedradas. Incluye cena romántica y paseo nocturno por el río Moldava. Un destino de cuento para parejas.
-                    </td>
-                    <td style="vertical-align:top;padding:1.2rem 1.2rem 1.2rem 1.5rem;background:#e3f2fd;">
-                        1. 2 personas, 2 noches<br>
-                        2. 2 personas, 5 noches
-                    </td>
-                    <td style="vertical-align:top;padding:1.2rem 1.2rem 1.2rem 1.5rem;background:#fff;">
-                        <form onsubmit="event.preventDefault();window.location.href='reservaok.html';">
-                            <div style="display:flex;flex-direction:column;gap:0.7rem;align-items:flex-start;">
-                                <div>
-                                    <label for="opcion-praga">Opción:</label>
-                                    <select id="opcion-praga" name="opcion-praga" style="margin:0 0.7rem 0 0.7rem;">
-                                        <option>1</option>
-                                        <option>2</option>
-                                    </select>
-                                </div>
-                                <div style="display:flex;align-items:center;gap:1.2rem;">
-                                    <span style="font-size:0.98rem;font-weight:600;min-width:90px;">Transporte:</span>
-                                    <label style="margin:0;"><input type="radio" name="transporte-praga" value="avion" required> Avión</label>
-                                    <label style="margin:0;"><input type="radio" name="transporte-praga" value="tren"> Tren</label>
-                                    <label style="margin:0;"><input type="radio" name="transporte-praga" value="sin"> Sin transporte</label>
-                                </div>
-                                <div>
-                                    <label><input type="checkbox" name="alojamiento-praga" checked> Incluir alojamiento</label>
-                                </div>
-                                <button type="submit" style="background:#ef4855;color:#fff;padding:0.5rem 1.2rem;border:none;border-radius:8px;font-weight:600;cursor:pointer;">Contratar</button>
-                            </div>
-                        </form>
-                    </td>
-                </tr>
-                <tr>
-                    <td style="vertical-align:top;padding:1.2rem 1.2rem 1.2rem 1.5rem;background:#e3f2fd;">
-                        <b>Santorini Azul</b><br>
-                        Viaje a la isla griega de Santorini con alojamiento en hotel con vistas al mar, cena al atardecer y excursión en barco privado. Un paraíso para enamorados.
+                        <b>Festival Primavera Sound (Barcelona)</b><br>
+                        Entrada para el festival Primavera Sound, alojamiento céntrico y traslados. Vive la mejor música indie y electrónica en uno de los festivales más famosos de Europa.
                     </td>
                     <td style="vertical-align:top;padding:1.2rem 1.2rem 1.2rem 1.5rem;background:#e3f2fd;">
                         1. 2 personas, 3 noches<br>
-                        2. 2 personas, 5 noches<br>
-                        3. 2 personas, 1 semana
+                        2. 4 personas, 3 noches<br>
+                        3. 2 personas, 5 noches
                     </td>
                     <td style="vertical-align:top;padding:1.2rem 1.2rem 1.2rem 1.5rem;background:#fff;">
                         <form onsubmit="event.preventDefault();window.location.href='reservaok.html';">
                             <div style="display:flex;flex-direction:column;gap:0.7rem;align-items:flex-start;">
                                 <div>
-                                    <label for="opcion-santorini">Opción:</label>
-                                    <select id="opcion-santorini" name="opcion-santorini" style="margin:0 0.7rem 0 0.7rem;">
+                                    <label for="opcion-primavera">Opción:</label>
+                                    <select id="opcion-primavera" name="opcion-primavera" style="margin:0 0.7rem 0 0.7rem;">
                                         <option>1</option>
                                         <option>2</option>
                                         <option>3</option>
@@ -208,12 +103,12 @@
                                 </div>
                                 <div style="display:flex;align-items:center;gap:1.2rem;">
                                     <span style="font-size:0.98rem;font-weight:600;min-width:90px;">Transporte:</span>
-                                    <label style="margin:0;"><input type="radio" name="transporte-santorini" value="avion" required> Avión</label>
-                                    <label style="margin:0;"><input type="radio" name="transporte-santorini" value="tren"> Tren</label>
-                                    <label style="margin:0;"><input type="radio" name="transporte-santorini" value="sin"> Sin transporte</label>
+                                    <label style="margin:0;"><input type="radio" name="transporte-primavera" value="avion" required> Avión</label>
+                                    <label style="margin:0;"><input type="radio" name="transporte-primavera" value="tren"> Tren</label>
+                                    <label style="margin:0;"><input type="radio" name="transporte-primavera" value="sin"> Sin transporte</label>
                                 </div>
                                 <div>
-                                    <label><input type="checkbox" name="alojamiento-santorini" checked> Incluir alojamiento</label>
+                                    <label><input type="checkbox" name="alojamiento-primavera" checked> Incluir alojamiento</label>
                                 </div>
                                 <button type="submit" style="background:#ef4855;color:#fff;padding:0.5rem 1.2rem;border:none;border-radius:8px;font-weight:600;cursor:pointer;">Contratar</button>
                             </div>
@@ -222,31 +117,136 @@
                 </tr>
                 <tr>
                     <td style="vertical-align:top;padding:1.2rem 1.2rem 1.2rem 1.5rem;background:#e3f2fd;">
-                        <b>Granada y la Alhambra</b><br>
-                        Escapada romántica a Granada con visita privada a la Alhambra, cena con vistas y alojamiento en hotel con encanto en el Albaicín. Cultura, historia y pasión en el sur de España.
+                        <b>Concierto en el Royal Albert Hall (Londres)</b><br>
+                        Entrada para un gran concierto en el Royal Albert Hall, vuelo y hotel céntrico. Una experiencia musical única en la capital británica.
                     </td>
                     <td style="vertical-align:top;padding:1.2rem 1.2rem 1.2rem 1.5rem;background:#e3f2fd;">
                         1. 2 personas, 2 noches<br>
-                        2. 2 personas, 4 noches
+                        2. 4 personas, 2 noches<br>
+                        3. 2 personas, 4 noches
                     </td>
                     <td style="vertical-align:top;padding:1.2rem 1.2rem 1.2rem 1.5rem;background:#fff;">
                         <form onsubmit="event.preventDefault();window.location.href='reservaok.html';">
                             <div style="display:flex;flex-direction:column;gap:0.7rem;align-items:flex-start;">
                                 <div>
-                                    <label for="opcion-granada">Opción:</label>
-                                    <select id="opcion-granada" name="opcion-granada" style="margin:0 0.7rem 0 0.7rem;">
+                                    <label for="opcion-royal">Opción:</label>
+                                    <select id="opcion-royal" name="opcion-royal" style="margin:0 0.7rem 0 0.7rem;">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                    </select>
+                                </div>
+                                <div style="display:flex;align-items:center;gap:1.2rem;">
+                                    <span style="font-size:0.98rem;font-weight:600;min-width:90px;">Transporte:</span>
+                                    <label style="margin:0;"><input type="radio" name="transporte-royal" value="avion" required> Avión</label>
+                                    <label style="margin:0;"><input type="radio" name="transporte-royal" value="tren"> Tren</label>
+                                    <label style="margin:0;"><input type="radio" name="transporte-royal" value="sin"> Sin transporte</label>
+                                </div>
+                                <div>
+                                    <label><input type="checkbox" name="alojamiento-royal" checked> Incluir alojamiento</label>
+                                </div>
+                                <button type="submit" style="background:#ef4855;color:#fff;padding:0.5rem 1.2rem;border:none;border-radius:8px;font-weight:600;cursor:pointer;">Contratar</button>
+                            </div>
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="vertical-align:top;padding:1.2rem 1.2rem 1.2rem 1.5rem;background:#e3f2fd;">
+                        <b>Festival de Jazz de Montreux (Suiza)</b><br>
+                        Entrada para el festival, alojamiento junto al lago y excursión en tren panorámico. Disfruta del mejor jazz internacional en un entorno espectacular.
+                    </td>
+                    <td style="vertical-align:top;padding:1.2rem 1.2rem 1.2rem 1.5rem;background:#e3f2fd;">
+                        1. 2 personas, 3 noches<br>
+                        2. 4 personas, 3 noches<br>
+                        3. 2 personas, 5 noches
+                    </td>
+                    <td style="vertical-align:top;padding:1.2rem 1.2rem 1.2rem 1.5rem;background:#fff;">
+                        <form onsubmit="event.preventDefault();window.location.href='reservaok.html';">
+                            <div style="display:flex;flex-direction:column;gap:0.7rem;align-items:flex-start;">
+                                <div>
+                                    <label for="opcion-montreux">Opción:</label>
+                                    <select id="opcion-montreux" name="opcion-montreux" style="margin:0 0.7rem 0 0.7rem;">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                    </select>
+                                </div>
+                                <div style="display:flex;align-items:center;gap:1.2rem;">
+                                    <span style="font-size:0.98rem;font-weight:600;min-width:90px;">Transporte:</span>
+                                    <label style="margin:0;"><input type="radio" name="transporte-montreux" value="avion" required> Avión</label>
+                                    <label style="margin:0;"><input type="radio" name="transporte-montreux" value="tren"> Tren</label>
+                                    <label style="margin:0;"><input type="radio" name="transporte-montreux" value="sin"> Sin transporte</label>
+                                </div>
+                                <div>
+                                    <label><input type="checkbox" name="alojamiento-montreux" checked> Incluir alojamiento</label>
+                                </div>
+                                <button type="submit" style="background:#ef4855;color:#fff;padding:0.5rem 1.2rem;border:none;border-radius:8px;font-weight:600;cursor:pointer;">Contratar</button>
+                            </div>
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="vertical-align:top;padding:1.2rem 1.2rem 1.2rem 1.5rem;background:#e3f2fd;">
+                        <b>Festival Internacional de Benicàssim (FIB)</b><br>
+                        Entrada para el FIB, alojamiento en hotel o camping y traslados. Vive la mejor música pop y rock en la costa mediterránea.
+                    </td>
+                    <td style="vertical-align:top;padding:1.2rem 1.2rem 1.2rem 1.5rem;background:#e3f2fd;">
+                        1. 2 personas, 3 noches<br>
+                        2. 4 personas, 3 noches<br>
+                        3. 2 personas, 5 noches
+                    </td>
+                    <td style="vertical-align:top;padding:1.2rem 1.2rem 1.2rem 1.5rem;background:#fff;">
+                        <form onsubmit="event.preventDefault();window.location.href='reservaok.html';">
+                            <div style="display:flex;flex-direction:column;gap:0.7rem;align-items:flex-start;">
+                                <div>
+                                    <label for="opcion-fib">Opción:</label>
+                                    <select id="opcion-fib" name="opcion-fib" style="margin:0 0.7rem 0 0.7rem;">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                    </select>
+                                </div>
+                                <div style="display:flex;align-items:center;gap:1.2rem;">
+                                    <span style="font-size:0.98rem;font-weight:600;min-width:90px;">Transporte:</span>
+                                    <label style="margin:0;"><input type="radio" name="transporte-fib" value="avion" required> Avión</label>
+                                    <label style="margin:0;"><input type="radio" name="transporte-fib" value="tren"> Tren</label>
+                                    <label style="margin:0;"><input type="radio" name="transporte-fib" value="sin"> Sin transporte</label>
+                                </div>
+                                <div>
+                                    <label><input type="checkbox" name="alojamiento-fib" checked> Incluir alojamiento</label>
+                                </div>
+                                <button type="submit" style="background:#ef4855;color:#fff;padding:0.5rem 1.2rem;border:none;border-radius:8px;font-weight:600;cursor:pointer;">Contratar</button>
+                            </div>
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="vertical-align:top;padding:1.2rem 1.2rem 1.2rem 1.5rem;background:#e3f2fd;">
+                        <b>Concierto en el WiZink Center (Madrid)</b><br>
+                        Entrada para un gran concierto en el WiZink Center, hotel céntrico y traslados. Disfruta de la mejor música en directo en la capital española.
+                    </td>
+                    <td style="vertical-align:top;padding:1.2rem 1.2rem 1.2rem 1.5rem;background:#e3f2fd;">
+                        1. 2 personas, 2 noches<br>
+                        2. 4 personas, 2 noches
+                    </td>
+                    <td style="vertical-align:top;padding:1.2rem 1.2rem 1.2rem 1.5rem;background:#fff;">
+                        <form onsubmit="event.preventDefault();window.location.href='reservaok.html';">
+                            <div style="display:flex;flex-direction:column;gap:0.7rem;align-items:flex-start;">
+                                <div>
+                                    <label for="opcion-wizink">Opción:</label>
+                                    <select id="opcion-wizink" name="opcion-wizink" style="margin:0 0.7rem 0 0.7rem;">
                                         <option>1</option>
                                         <option>2</option>
                                     </select>
                                 </div>
                                 <div style="display:flex;align-items:center;gap:1.2rem;">
                                     <span style="font-size:0.98rem;font-weight:600;min-width:90px;">Transporte:</span>
-                                    <label style="margin:0;"><input type="radio" name="transporte-granada" value="avion" required> Avión</label>
-                                    <label style="margin:0;"><input type="radio" name="transporte-granada" value="tren"> Tren</label>
-                                    <label style="margin:0;"><input type="radio" name="transporte-granada" value="sin"> Sin transporte</label>
+                                    <label style="margin:0;"><input type="radio" name="transporte-wizink" value="avion" required> Avión</label>
+                                    <label style="margin:0;"><input type="radio" name="transporte-wizink" value="tren"> Tren</label>
+                                    <label style="margin:0;"><input type="radio" name="transporte-wizink" value="sin"> Sin transporte</label>
                                 </div>
                                 <div>
-                                    <label><input type="checkbox" name="alojamiento-granada" checked> Incluir alojamiento</label>
+                                    <label><input type="checkbox" name="alojamiento-wizink" checked> Incluir alojamiento</label>
                                 </div>
                                 <button type="submit" style="background:#ef4855;color:#fff;padding:0.5rem 1.2rem;border:none;border-radius:8px;font-weight:600;cursor:pointer;">Contratar</button>
                             </div>
