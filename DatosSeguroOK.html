@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Opciones de Seguro de Viaje</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #7a9b9e 0%, #6b8b8e 50%, #5c7b7e 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        .container {
+            background: rgba(255,255,255,0.97);
+            padding: 2.5rem 2rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.18);
+            max-width: 900px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        .titulo {
+            font-size: 2rem;
+            color: #1a202c;
+            font-weight: 700;
+            margin-bottom: 2rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 1.5rem 1.5rem;
+        }
+        td {
+            background: #f7fafc;
+            border-radius: 14px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            padding: 1.5rem 1.2rem 1.2rem 1.2rem;
+            vertical-align: top;
+            text-align: left;
+        }
+        .seguro-nombre {
+            font-weight: bold;
+            color: #d32f2f;
+            font-size: 1.13rem;
+            margin-bottom: 0.7rem;
+            display: block;
+        }
+        .seguro-desc {
+            color: #2d3748;
+            font-size: 1rem;
+            margin-bottom: 1.1rem;
+        }
+        .btn-incluir {
+            display: inline-block;
+            background: #1976d2;
+            color: #fff;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 0.6rem 1.3rem;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .btn-incluir:hover {
+            background: #1565c0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="titulo">Opciones de Seguro de Viaje</div>
+        <table>
+            <tr>
+                <td>
+                    <span class="seguro-nombre">Seguro Básico</span>
+                    <div class="seguro-desc">Cobertura médica internacional hasta 10.000€, asistencia telefónica 24h y repatriación sanitaria.</div>
+                    <button class="btn-incluir">Incluir</button>
+                </td>
+                <td>
+                    <span class="seguro-nombre">Seguro Plus</span>
+                    <div class="seguro-desc">Incluye todo lo del básico, más cobertura de equipaje perdido/dañado y cancelación de viaje hasta 1.000€.</div>
+                    <button class="btn-incluir">Incluir</button>
+                </td>
+                <td>
+                    <span class="seguro-nombre">Seguro Premium</span>
+                    <div class="seguro-desc">Cobertura médica hasta 100.000€, cancelación total, protección COVID-19, responsabilidad civil y asistencia jurídica.</div>
+                    <button class="btn-incluir">Incluir</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

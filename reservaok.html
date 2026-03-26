@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reserva Confirmada</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #7a9b9e 0%, #6b8b8e 50%, #5c7b7e 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        .container {
+            background: rgba(255,255,255,0.97);
+            padding: 2.5rem 2rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.18);
+            max-width: 480px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        .titulo {
+            font-size: 2rem;
+            color: #1a202c;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+        .resumen {
+            text-align: left;
+            margin: 1.5rem 0 2rem 0;
+            background: #f7fafc;
+            border-radius: 12px;
+            padding: 1.2rem 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            color: #2d3748;
+            font-size: 1.08rem;
+        }
+        .importe {
+            font-size: 1.25rem;
+            color: #d32f2f;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+        }
+        .gracias {
+            font-size: 1.13rem;
+            color: #1976d2;
+            margin-bottom: 1.5rem;
+        }
+        .btn-home {
+            display: inline-block;
+            margin-top: 1.2rem;
+            background: #fff;
+            color: #1a202c;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 0.7rem 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: background 0.2s;
+        }
+        .btn-home:hover {
+            background: #ffe0b2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="titulo">¡Reserva Confirmada!</div>
+        <div class="resumen">
+            <b>Tipo de reserva:</b> Hotel 5 estrellas<br>
+            <b>Número de personas:</b> 2 adultos, 1 niño<br>
+            <b>Fecha de entrada (Check-in):</b> 10/04/2026 a las 15:00<br>
+            <b>Fecha de salida (Check-out):</b> 15/04/2026 a las 12:00<br>
+            <b>Habitación:</b> Suite Junior con vistas al mar<br>
+            <b>Servicios incluidos:</b> Desayuno buffet, acceso spa, parking gratuito<br>
+        </div>
+        <div class="importe">Importe total: 1.250,00 €</div>
+        <div class="gracias">Gracias por confiar en nuestros servicios.<br>¡Esperamos que disfrute de su viaje!</div>
+        <a href="index.html" class="btn-home">⟵ Volver a Home</a>
+    </div>
+</body>
+</html>

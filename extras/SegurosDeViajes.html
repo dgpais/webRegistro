@@ -21,6 +21,13 @@
             <input type="text" id="reserva" name="reserva" placeholder="Introduce tu número de reserva" style="padding:0.6rem 1rem; border-radius:8px; border:1px solid #bdbdbd; width:260px; font-size:1rem;">
             <button type="submit" style="padding:0.6rem 2.2rem; background:#2b7a78; color:#fff; border:none; border-radius:8px; font-size:1rem; font-weight:600; cursor:pointer; transition:background 0.2s;">Aceptar</button>
         </form>
+        <script>
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            window.location.href = '../DatosSeguroOK.html';
+        });
+        </script>
+        </form>
         <div style="font-size:0.98rem; color:#444; background:#f1f8fa; border-radius:8px; padding:1rem; margin-bottom:0.5rem;">
             Por favor, introduce el número de reserva para consultar las condiciones de tu seguro o contratar uno nuevo. <br><strong>Es imprescindible disponer de una reserva activa para acceder a esta información.</strong>
         </div>
