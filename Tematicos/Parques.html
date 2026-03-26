@@ -50,7 +50,7 @@
             border-radius: 20px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
             width: 100%;
-            max-width: 600px;
+            max-width: 1200px;
             position: relative;
             z-index: 1;
             animation: slideIn 0.5s ease-out;
@@ -72,11 +72,11 @@
     <div class="container">
         <div class="page-title">TEMATICOS</div>
         <!-- Contenido aquí -->
-            <table style="width:100%;border-collapse:separate;border-spacing:1.5rem 1.5rem;text-align:left;margin-top:1.5rem;">
+            <table style="width:100%;border-collapse:separate;border-spacing:1.5rem 1.5rem;text-align:left;margin-top:1.5rem;table-layout:fixed;">
                 <tr style="background:#e3f2fd;">
-                    <th style="padding:1rem 1rem 1rem 1.5rem;font-size:1.1rem;color:#1976d2;">Descripción</th>
-                    <th style="padding:1rem 1rem 1rem 1.5rem;font-size:1.1rem;color:#1976d2;">Opciones de Reserva</th>
-                    <th style="padding:1rem 1rem 1rem 1.5rem;font-size:1.1rem;color:#1976d2;">Contratar</th>
+                    <th style="padding:1rem 1rem 1rem 1.5rem;font-size:1.1rem;color:#1976d2;width:32%;background:#e3f2fd;">Descripción</th>
+                    <th style="padding:1rem 1rem 1rem 1.5rem;font-size:1.1rem;color:#1976d2;width:28%;background:#e3f2fd;">Opciones de Reserva</th>
+                    <th style="padding:1rem 1rem 1rem 1.5rem;font-size:1.1rem;color:#1976d2;width:40%;background:#fff;">Contratar</th>
                 </tr>
                 <tr>
                     <td style="vertical-align:top;padding:1.2rem 1.2rem 1.2rem 1.5rem;background:#e3f2fd;">
@@ -89,25 +89,29 @@
                         3. 2 personas, 1 semana<br>
                         4. 4 personas, 1 semana
                     </td>
-                    <td style="vertical-align:top;padding:1.2rem 1.2rem 1.2rem 1.5rem;background:#e3f2fd;">
+                    <td style="vertical-align:top;padding:1.2rem 1.2rem 1.2rem 1.5rem;background:#fff;">
                         <form onsubmit="event.preventDefault();window.location.href='../reservaok.html';">
-                            <label for="opcion-disney">Opción:</label>
-                            <select id="opcion-disney" name="opcion-disney" style="margin:0 0.7rem 0 0.7rem;">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                            </select>
-                            <div style="margin:0.7rem 0 0.7rem 0;">
-                                <span style="font-size:0.98rem;font-weight:600;">Transporte:</span><br>
-                                <label><input type="radio" name="transporte-disney" value="avion" required> Avión</label>
-                                <label style="margin-left:1.2rem;"><input type="radio" name="transporte-disney" value="tren"> Tren</label>
-                                <label style="margin-left:1.2rem;"><input type="radio" name="transporte-disney" value="sin"> Sin transporte</label>
+                            <div style="display:flex;flex-direction:column;gap:0.7rem;align-items:flex-start;">
+                                <div>
+                                    <label for="opcion-disney">Opción:</label>
+                                    <select id="opcion-disney" name="opcion-disney" style="margin:0 0.7rem 0 0.7rem;">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                    </select>
+                                </div>
+                                <div style="display:flex;align-items:center;gap:1.2rem;">
+                                    <span style="font-size:0.98rem;font-weight:600;min-width:90px;">Transporte:</span>
+                                    <label style="margin:0;"><input type="radio" name="transporte-disney" value="avion" required> Avión</label>
+                                    <label style="margin:0;"><input type="radio" name="transporte-disney" value="tren"> Tren</label>
+                                    <label style="margin:0;"><input type="radio" name="transporte-disney" value="sin"> Sin transporte</label>
+                                </div>
+                                <div>
+                                    <label><input type="checkbox" name="alojamiento-disney"> Incluir alojamiento</label>
+                                </div>
+                                <button type="submit" style="background:#ef4855;color:#fff;padding:0.5rem 1.2rem;border:none;border-radius:8px;font-weight:600;cursor:pointer;">Contratar</button>
                             </div>
-                            <div style="margin-bottom:0.7rem;">
-                                <label><input type="checkbox" name="alojamiento-disney"> Incluir alojamiento</label>
-                            </div>
-                            <button type="submit" style="background:#ef4855;color:#fff;padding:0.5rem 1.2rem;border:none;border-radius:8px;font-weight:600;cursor:pointer;">Contratar</button>
                         </form>
                     </td>
                 </tr>
@@ -121,113 +125,129 @@
                         2. 4 personas, 2 días<br>
                         3. 2 personas, 1 semana
                     </td>
-                    <td style="vertical-align:top;padding:1.2rem 1.2rem 1.2rem 1.5rem;">
+                    <td style="vertical-align:top;padding:1.2rem 1.2rem 1.2rem 1.5rem;background:#fff;">
                         <form onsubmit="event.preventDefault();window.location.href='../reservaok.html';">
-                            <label for="opcion-portaventura">Opción:</label>
-                            <select id="opcion-portaventura" name="opcion-portaventura" style="margin:0 0.7rem 0 0.7rem;">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                            </select>
-                            <div style="margin:0.7rem 0 0.7rem 0;">
-                                <span style="font-size:0.98rem;font-weight:600;">Transporte:</span><br>
-                                <label><input type="radio" name="transporte-portaventura" value="avion" required> Avión</label>
-                                <label style="margin-left:1.2rem;"><input type="radio" name="transporte-portaventura" value="tren"> Tren</label>
-                                <label style="margin-left:1.2rem;"><input type="radio" name="transporte-portaventura" value="sin"> Sin transporte</label>
+                            <div style="display:flex;flex-direction:column;gap:0.7rem;align-items:flex-start;">
+                                <div>
+                                    <label for="opcion-portaventura">Opción:</label>
+                                    <select id="opcion-portaventura" name="opcion-portaventura" style="margin:0 0.7rem 0 0.7rem;">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                    </select>
+                                </div>
+                                <div style="display:flex;align-items:center;gap:1.2rem;">
+                                    <span style="font-size:0.98rem;font-weight:600;min-width:90px;">Transporte:</span>
+                                    <label style="margin:0;"><input type="radio" name="transporte-portaventura" value="avion" required> Avión</label>
+                                    <label style="margin:0;"><input type="radio" name="transporte-portaventura" value="tren"> Tren</label>
+                                    <label style="margin:0;"><input type="radio" name="transporte-portaventura" value="sin"> Sin transporte</label>
+                                </div>
+                                <div>
+                                    <label><input type="checkbox" name="alojamiento-portaventura"> Incluir alojamiento</label>
+                                </div>
+                                <button type="submit" style="background:#ef4855;color:#fff;padding:0.5rem 1.2rem;border:none;border-radius:8px;font-weight:600;cursor:pointer;">Contratar</button>
                             </div>
-                            <div style="margin-bottom:0.7rem;">
-                                <label><input type="checkbox" name="alojamiento-portaventura"> Incluir alojamiento</label>
-                            </div>
-                            <button type="submit" style="background:#ef4855;color:#fff;padding:0.5rem 1.2rem;border:none;border-radius:8px;font-weight:600;cursor:pointer;">Contratar</button>
                         </form>
                     </td>
                 </tr>
                 <tr>
-                    <td style="vertical-align:top;padding:1.2rem 1.2rem 1.2rem 1.5rem;">
+                    <td style="vertical-align:top;padding:1.2rem 1.2rem 1.2rem 1.5rem;background:#e3f2fd;">
                         <b>Terra Mítica</b><br>
                         Parque temático ambientado en las antiguas civilizaciones del Mediterráneo: Egipto, Grecia, Roma, Iberia y Las Islas. Atracciones, espectáculos y zonas de agua para el verano.
                     </td>
-                    <td style="vertical-align:top;padding:1.2rem 1.2rem 1.2rem 1.5rem;">
+                    <td style="vertical-align:top;padding:1.2rem 1.2rem 1.2rem 1.5rem;background:#e3f2fd;">
                         1. 2 personas, 2 días<br>
                         2. 4 personas, 2 días
                     </td>
-                    <td style="vertical-align:top;padding:1.2rem 1.2rem 1.2rem 1.5rem;">
+                    <td style="vertical-align:top;padding:1.2rem 1.2rem 1.2rem 1.5rem;background:#fff;">
                         <form onsubmit="event.preventDefault();window.location.href='../reservaok.html';">
-                            <label for="opcion-terramitica">Opción:</label>
-                            <select id="opcion-terramitica" name="opcion-terramitica" style="margin:0 0.7rem 0 0.7rem;">
-                                <option>1</option>
-                                <option>2</option>
-                            </select>
-                            <div style="margin:0.7rem 0 0.7rem 0;">
-                                <span style="font-size:0.98rem;font-weight:600;">Transporte:</span><br>
-                                <label><input type="radio" name="transporte-terramitica" value="avion" required> Avión</label>
-                                <label style="margin-left:1.2rem;"><input type="radio" name="transporte-terramitica" value="tren"> Tren</label>
-                                <label style="margin-left:1.2rem;"><input type="radio" name="transporte-terramitica" value="sin"> Sin transporte</label>
+                            <div style="display:flex;flex-direction:column;gap:0.7rem;align-items:flex-start;">
+                                <div>
+                                    <label for="opcion-terramitica">Opción:</label>
+                                    <select id="opcion-terramitica" name="opcion-terramitica" style="margin:0 0.7rem 0 0.7rem;">
+                                        <option>1</option>
+                                        <option>2</option>
+                                    </select>
+                                </div>
+                                <div style="display:flex;align-items:center;gap:1.2rem;">
+                                    <span style="font-size:0.98rem;font-weight:600;min-width:90px;">Transporte:</span>
+                                    <label style="margin:0;"><input type="radio" name="transporte-terramitica" value="avion" required> Avión</label>
+                                    <label style="margin:0;"><input type="radio" name="transporte-terramitica" value="tren"> Tren</label>
+                                    <label style="margin:0;"><input type="radio" name="transporte-terramitica" value="sin"> Sin transporte</label>
+                                </div>
+                                <div>
+                                    <label><input type="checkbox" name="alojamiento-terramitica"> Incluir alojamiento</label>
+                                </div>
+                                <button type="submit" style="background:#ef4855;color:#fff;padding:0.5rem 1.2rem;border:none;border-radius:8px;font-weight:600;cursor:pointer;">Contratar</button>
                             </div>
-                            <div style="margin-bottom:0.7rem;">
-                                <label><input type="checkbox" name="alojamiento-terramitica"> Incluir alojamiento</label>
-                            </div>
-                            <button type="submit" style="background:#ef4855;color:#fff;padding:0.5rem 1.2rem;border:none;border-radius:8px;font-weight:600;cursor:pointer;">Contratar</button>
                         </form>
                     </td>
                 </tr>
                 <tr>
-                    <td style="vertical-align:top;padding:1.2rem 1.2rem 1.2rem 1.5rem;">
+                    <td style="vertical-align:top;padding:1.2rem 1.2rem 1.2rem 1.5rem;background:#e3f2fd;">
                         <b>Warner Madrid</b><br>
                         Parque temático dedicado al mundo del cine y los personajes de Warner Bros. Montañas rusas, espectáculos, zona infantil y encuentros con superhéroes y personajes animados.
                     </td>
-                    <td style="vertical-align:top;padding:1.2rem 1.2rem 1.2rem 1.5rem;">
+                    <td style="vertical-align:top;padding:1.2rem 1.2rem 1.2rem 1.5rem;background:#e3f2fd;">
                         1. 2 personas, 2 días<br>
                         2. 4 personas, 2 días<br>
                         3. 2 personas, 1 semana
                     </td>
-                    <td style="vertical-align:top;padding:1.2rem 1.2rem 1.2rem 1.5rem;">
+                    <td style="vertical-align:top;padding:1.2rem 1.2rem 1.2rem 1.5rem;background:#fff;">
                         <form onsubmit="event.preventDefault();window.location.href='../reservaok.html';">
-                            <label for="opcion-warner">Opción:</label>
-                            <select id="opcion-warner" name="opcion-warner" style="margin:0 0.7rem 0 0.7rem;">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                            </select>
-                            <div style="margin:0.7rem 0 0.7rem 0;">
-                                <span style="font-size:0.98rem;font-weight:600;">Transporte:</span><br>
-                                <label><input type="radio" name="transporte-warner" value="avion" required> Avión</label>
-                                <label style="margin-left:1.2rem;"><input type="radio" name="transporte-warner" value="tren"> Tren</label>
-                                <label style="margin-left:1.2rem;"><input type="radio" name="transporte-warner" value="sin"> Sin transporte</label>
+                            <div style="display:flex;flex-direction:column;gap:0.7rem;align-items:flex-start;">
+                                <div>
+                                    <label for="opcion-warner">Opción:</label>
+                                    <select id="opcion-warner" name="opcion-warner" style="margin:0 0.7rem 0 0.7rem;">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                    </select>
+                                </div>
+                                <div style="display:flex;align-items:center;gap:1.2rem;">
+                                    <span style="font-size:0.98rem;font-weight:600;min-width:90px;">Transporte:</span>
+                                    <label style="margin:0;"><input type="radio" name="transporte-warner" value="avion" required> Avión</label>
+                                    <label style="margin:0;"><input type="radio" name="transporte-warner" value="tren"> Tren</label>
+                                    <label style="margin:0;"><input type="radio" name="transporte-warner" value="sin"> Sin transporte</label>
+                                </div>
+                                <div>
+                                    <label><input type="checkbox" name="alojamiento-warner"> Incluir alojamiento</label>
+                                </div>
+                                <button type="submit" style="background:#ef4855;color:#fff;padding:0.5rem 1.2rem;border:none;border-radius:8px;font-weight:600;cursor:pointer;">Contratar</button>
                             </div>
-                            <div style="margin-bottom:0.7rem;">
-                                <label><input type="checkbox" name="alojamiento-warner"> Incluir alojamiento</label>
-                            </div>
-                            <button type="submit" style="background:#ef4855;color:#fff;padding:0.5rem 1.2rem;border:none;border-radius:8px;font-weight:600;cursor:pointer;">Contratar</button>
                         </form>
                     </td>
                 </tr>
                 <tr>
-                    <td style="vertical-align:top;padding:1.2rem 1.2rem 1.2rem 1.5rem;">
+                    <td style="vertical-align:top;padding:1.2rem 1.2rem 1.2rem 1.5rem;background:#e3f2fd;">
                         <b>Isla Mágica</b><br>
                         Parque temático en Sevilla ambientado en el descubrimiento de América. Atracciones acuáticas, montañas rusas, espectáculos y zona infantil. Ideal para el verano y familias.
                     </td>
-                    <td style="vertical-align:top;padding:1.2rem 1.2rem 1.2rem 1.5rem;">
+                    <td style="vertical-align:top;padding:1.2rem 1.2rem 1.2rem 1.5rem;background:#e3f2fd;">
                         1. 2 personas, 2 días<br>
                         2. 4 personas, 2 días
                     </td>
-                    <td style="vertical-align:top;padding:1.2rem 1.2rem 1.2rem 1.5rem;">
+                    <td style="vertical-align:top;padding:1.2rem 1.2rem 1.2rem 1.5rem;background:#fff;">
                         <form onsubmit="event.preventDefault();window.location.href='../reservaok.html';">
-                            <label for="opcion-islamagica">Opción:</label>
-                            <select id="opcion-islamagica" name="opcion-islamagica" style="margin:0 0.7rem 0 0.7rem;">
-                                <option>1</option>
-                                <option>2</option>
-                            </select>
-                            <div style="margin:0.7rem 0 0.7rem 0;">
-                                <span style="font-size:0.98rem;font-weight:600;">Transporte:</span><br>
-                                <label><input type="radio" name="transporte-islamagica" value="avion" required> Avión</label>
-                                <label style="margin-left:1.2rem;"><input type="radio" name="transporte-islamagica" value="tren"> Tren</label>
-                                <label style="margin-left:1.2rem;"><input type="radio" name="transporte-islamagica" value="sin"> Sin transporte</label>
+                            <div style="display:flex;flex-direction:column;gap:0.7rem;align-items:flex-start;">
+                                <div>
+                                    <label for="opcion-islamagica">Opción:</label>
+                                    <select id="opcion-islamagica" name="opcion-islamagica" style="margin:0 0.7rem 0 0.7rem;">
+                                        <option>1</option>
+                                        <option>2</option>
+                                    </select>
+                                </div>
+                                <div style="display:flex;align-items:center;gap:1.2rem;">
+                                    <span style="font-size:0.98rem;font-weight:600;min-width:90px;">Transporte:</span>
+                                    <label style="margin:0;"><input type="radio" name="transporte-islamagica" value="avion" required> Avión</label>
+                                    <label style="margin:0;"><input type="radio" name="transporte-islamagica" value="tren"> Tren</label>
+                                    <label style="margin:0;"><input type="radio" name="transporte-islamagica" value="sin"> Sin transporte</label>
+                                </div>
+                                <div>
+                                    <label><input type="checkbox" name="alojamiento-islamagica"> Incluir alojamiento</label>
+                                </div>
+                                <button type="submit" style="background:#ef4855;color:#fff;padding:0.5rem 1.2rem;border:none;border-radius:8px;font-weight:600;cursor:pointer;">Contratar</button>
                             </div>
-                            <div style="margin-bottom:0.7rem;">
-                                <label><input type="checkbox" name="alojamiento-islamagica"> Incluir alojamiento</label>
-                            </div>
-                            <button type="submit" style="background:#ef4855;color:#fff;padding:0.5rem 1.2rem;border:none;border-radius:8px;font-weight:600;cursor:pointer;">Contratar</button>
                         </form>
                     </td>
                 </tr>
