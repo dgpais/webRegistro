@@ -89,25 +89,31 @@
             <div style="background:#f7f7f7;padding:2rem 2.2rem 2.2rem 2.2rem;border-radius:16px;box-shadow:0 2px 12px rgba(122,155,158,0.08);max-width:520px;margin-left:auto;margin-right:auto;">
                 <div style="font-size:1.15rem;font-weight:600;color:#1976d2;margin-bottom:1.2rem;">Configura tus métodos de pago</div>
                 <form id="form-metodos-pago" style="display:flex;flex-direction:column;gap:1.2rem;">
-                    <div style="text-align:left;display:flex;align-items:center;gap:0.7rem;">
-                        <input type="radio" name="metodo-defecto" id="radio-tarjeta" value="tarjeta" checked>
-                        <label for="radio-tarjeta" style="font-weight:500;">Tarjeta de crédito:</label>
-                        <input type="text" placeholder="Número de tarjeta" maxlength="19" style="margin-top:0.3rem;padding:0.4rem 0.7rem;border-radius:8px;border:1px solid #b0bec5;width:160px;">
-                        <input type="text" placeholder="MM/AA" maxlength="5" style="margin-left:0.7rem;padding:0.4rem 0.7rem;border-radius:8px;border:1px solid #b0bec5;width:50px;">
-                        <input type="text" placeholder="CVV" maxlength="4" style="margin-left:0.7rem;padding:0.4rem 0.7rem;border-radius:8px;border:1px solid #b0bec5;width:40px;">
-                        <button type="button" class="btn-guardar" data-metodo="tarjeta" style="margin-left:0.7rem;background:#7a9b9e;color:#fff;padding:0.4rem 1.1rem;border:none;border-radius:8px;font-weight:600;cursor:pointer;">Guardar</button>
-                    </div>
-                    <div style="text-align:left;display:flex;align-items:center;gap:0.7rem;">
-                        <input type="radio" name="metodo-defecto" id="radio-paypal" value="paypal">
-                        <label for="radio-paypal" style="font-weight:500;">PayPal:</label>
-                        <input type="email" placeholder="Correo de PayPal" style="margin-top:0.3rem;padding:0.4rem 0.7rem;border-radius:8px;border:1px solid #b0bec5;width:160px;">
-                        <button type="button" class="btn-guardar" data-metodo="paypal" style="margin-left:0.7rem;background:#7a9b9e;color:#fff;padding:0.4rem 1.1rem;border:none;border-radius:8px;font-weight:600;cursor:pointer;">Guardar</button>
-                    </div>
-                    <div style="text-align:left;display:flex;align-items:center;gap:0.7rem;">
-                        <input type="radio" name="metodo-defecto" id="radio-transferencia" value="transferencia">
-                        <label for="radio-transferencia" style="font-weight:500;">Transferencia bancaria:</label>
-                        <input type="text" placeholder="IBAN" maxlength="34" style="margin-top:0.3rem;padding:0.4rem 0.7rem;border-radius:8px;border:1px solid #b0bec5;width:180px;">
-                        <button type="button" class="btn-guardar" data-metodo="transferencia" style="margin-left:0.7rem;background:#7a9b9e;color:#fff;padding:0.4rem 1.1rem;border:none;border-radius:8px;font-weight:600;cursor:pointer;">Guardar</button>
+                    <div style="display:flex;flex-direction:row;gap:1.2rem;align-items:flex-start;">
+                        <div style="flex:1;display:flex;flex-direction:column;gap:1.2rem;">
+                            <div style="display:flex;align-items:center;gap:0.7rem;">
+                                <input type="radio" name="metodo-defecto" id="radio-tarjeta" value="tarjeta" checked>
+                                <label for="radio-tarjeta" style="font-weight:500;">Tarjeta de crédito:</label>
+                                <input type="text" placeholder="Número de tarjeta" maxlength="19" style="margin-top:0.3rem;padding:0.4rem 0.7rem;border-radius:8px;border:1px solid #b0bec5;width:160px;">
+                                <input type="text" placeholder="MM/AA" maxlength="5" style="margin-left:0.7rem;padding:0.4rem 0.7rem;border-radius:8px;border:1px solid #b0bec5;width:50px;">
+                                <input type="text" placeholder="CVV" maxlength="4" style="margin-left:0.7rem;padding:0.4rem 0.7rem;border-radius:8px;border:1px solid #b0bec5;width:40px;">
+                            </div>
+                            <div style="display:flex;align-items:center;gap:0.7rem;">
+                                <input type="radio" name="metodo-defecto" id="radio-paypal" value="paypal">
+                                <label for="radio-paypal" style="font-weight:500;">PayPal:</label>
+                                <input type="email" placeholder="Correo de PayPal" style="margin-top:0.3rem;padding:0.4rem 0.7rem;border-radius:8px;border:1px solid #b0bec5;width:160px;">
+                            </div>
+                            <div style="display:flex;align-items:center;gap:0.7rem;">
+                                <input type="radio" name="metodo-defecto" id="radio-transferencia" value="transferencia">
+                                <label for="radio-transferencia" style="font-weight:500;">Transferencia bancaria:</label>
+                                <input type="text" placeholder="IBAN" maxlength="34" style="margin-top:0.3rem;padding:0.4rem 0.7rem;border-radius:8px;border:1px solid #b0bec5;width:180px;">
+                            </div>
+                        </div>
+                        <div style="display:flex;flex-direction:column;gap:2.1rem;align-items:stretch;justify-content:flex-start;">
+                            <button type="button" class="btn-guardar" data-metodo="tarjeta" style="background:#7a9b9e;color:#fff;padding:0.4rem 1.1rem;border:none;border-radius:8px;font-weight:600;cursor:pointer;min-width:90px;">Guardar</button>
+                            <button type="button" class="btn-guardar" data-metodo="paypal" style="background:#7a9b9e;color:#fff;padding:0.4rem 1.1rem;border:none;border-radius:8px;font-weight:600;cursor:pointer;min-width:90px;">Guardar</button>
+                            <button type="button" class="btn-guardar" data-metodo="transferencia" style="background:#7a9b9e;color:#fff;padding:0.4rem 1.1rem;border:none;border-radius:8px;font-weight:600;cursor:pointer;min-width:90px;">Guardar</button>
+                        </div>
                     </div>
                 </form>
                 <div id="mensaje-guardar" style="display:none;margin-top:1.2rem;color:#388e3c;font-weight:600;text-align:center;">¡Cambios guardados correctamente!</div>
