@@ -58,6 +58,7 @@
             color: #2d3748;
             font-size: 1rem;
             margin-bottom: 1.1rem;
+            margin-left: 1.2rem;
         }
         .btn-incluir {
             display: inline-block;
@@ -77,6 +78,7 @@
     </style>
 </head>
 <body>
+    <a href="../home.html" style="position:absolute;top:30px;left:30px;z-index:2;text-decoration:none;background:#fff;padding:0.6rem 1.2rem;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.08);font-weight:600;color:#1a202c;transition:background 0.2s;">⟵ Volver a Home</a>
     <div class="container">
         <div class="titulo">Opciones de Seguro de Viaje</div>
         <table>
@@ -98,6 +100,19 @@
                 </td>
             </tr>
         </table>
+        <div id="mensaje-contratado" style="display:none;margin-top:2.5rem;padding:1.3rem 1.2rem;background:#e3fcec;border-radius:12px;color:#256029;font-size:1.13rem;font-weight:500;box-shadow:0 2px 8px #b2dfdb;max-width:600px;margin-left:auto;margin-right:auto;">
+            ¡El seguro ha sido contratado correctamente!<br>
+            Recibirá un correo con los detalles de la póliza y el teléfono de asistencia. Recuerde llevar su póliza de seguro durante el viaje y consultar las condiciones particulares de cobertura.
+        </div>
     </div>
+    <script>
+    document.querySelectorAll('.btn-incluir').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            var msg = document.getElementById('mensaje-contratado');
+            msg.style.display = 'block';
+            msg.scrollIntoView({behavior:'smooth', block:'end'});
+        });
+    });
+    </script>
 </body>
 </html>
