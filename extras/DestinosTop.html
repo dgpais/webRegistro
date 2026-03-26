@@ -5,7 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Destinos Top</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f7f7f7; margin: 0; }
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #7a9b9e 0%, #6b8b8e 50%, #5c7b7e 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        body::before {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(239, 72, 85, 0.15), transparent);
+            border-radius: 50%;
+            top: -200px;
+            right: -200px;
+            animation: float 8s ease-in-out infinite;
+        }
+        body::after {
+            content: "";
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(122, 155, 158, 0.2), transparent);
+            border-radius: 50%;
+            bottom: -150px;
+            left: -150px;
+            animation: float 10s ease-in-out infinite reverse;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(30px); }
+        }
         .container { max-width: 1200px; margin: 4rem auto; background: #fff; border-radius: 18px; box-shadow: 0 8px 32px rgba(0,0,0,0.12); padding: 3.5rem 3rem; text-align: center; }
         .header { font-size: 2rem; font-weight: 700; color: #1a202c; margin-bottom: 2rem; }
     </style>
