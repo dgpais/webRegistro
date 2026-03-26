@@ -73,6 +73,56 @@
     <div class="container">
         <div class="page-title">Facilidades de Pago</div>
         <!-- Contenido aquí -->
+            <!-- Caja de Dinero -->
+            <div style="background:#e3f2fd;padding:1.5rem 2rem 2rem 2rem;border-radius:16px;margin-bottom:2.2rem;box-shadow:0 2px 12px rgba(122,155,158,0.08);max-width:420px;margin-left:auto;margin-right:auto;">
+                <div style="font-size:1.15rem;font-weight:600;color:#1976d2;margin-bottom:0.7rem;">Caja de dinero</div>
+                <div style="font-size:1.05rem;margin-bottom:1.2rem;">Saldo actual: <span id="saldo-caja" style="font-weight:700;color:#388e3c;">356</span> €</div>
+                <form id="form-recarga" style="display:flex;gap:0.7rem;justify-content:center;align-items:center;">
+                    <label for="recarga" style="font-weight:500;">Recargar:</label>
+                    <input type="number" id="recarga" name="recarga" min="1" max="10000" step="1" style="padding:0.4rem 0.7rem;border-radius:8px;border:1px solid #b0bec5;width:90px;" required>
+                    <button type="submit" style="background:#7a9b9e;color:#fff;padding:0.4rem 1.2rem;border:none;border-radius:8px;font-weight:600;cursor:pointer;">Recargar</button>
+                </form>
+                <div id="mensaje-recarga" style="margin-top:0.7rem;color:#388e3c;font-weight:500;display:none;">Recarga realizada correctamente.</div>
+            </div>
+
+            <!-- Configuración de Métodos de Pago -->
+            <div style="background:#f7f7f7;padding:2rem 2.2rem 2.2rem 2.2rem;border-radius:16px;box-shadow:0 2px 12px rgba(122,155,158,0.08);max-width:520px;margin-left:auto;margin-right:auto;">
+                <div style="font-size:1.15rem;font-weight:600;color:#1976d2;margin-bottom:1.2rem;">Configura tus métodos de pago</div>
+                <form style="display:flex;flex-direction:column;gap:1.2rem;">
+                    <div style="text-align:left;">
+                        <label style="font-weight:500;">Tarjeta de crédito:</label><br>
+                        <input type="text" placeholder="Número de tarjeta" maxlength="19" style="margin-top:0.3rem;padding:0.4rem 0.7rem;border-radius:8px;border:1px solid #b0bec5;width:220px;">
+                        <input type="text" placeholder="MM/AA" maxlength="5" style="margin-left:0.7rem;padding:0.4rem 0.7rem;border-radius:8px;border:1px solid #b0bec5;width:60px;">
+                        <input type="text" placeholder="CVV" maxlength="4" style="margin-left:0.7rem;padding:0.4rem 0.7rem;border-radius:8px;border:1px solid #b0bec5;width:50px;">
+                    </div>
+                    <div style="text-align:left;">
+                        <label style="font-weight:500;">PayPal:</label><br>
+                        <input type="email" placeholder="Correo de PayPal" style="margin-top:0.3rem;padding:0.4rem 0.7rem;border-radius:8px;border:1px solid #b0bec5;width:220px;">
+                    </div>
+                    <div style="text-align:left;">
+                        <label style="font-weight:500;">Transferencia bancaria:</label><br>
+                        <input type="text" placeholder="IBAN" maxlength="34" style="margin-top:0.3rem;padding:0.4rem 0.7rem;border-radius:8px;border:1px solid #b0bec5;width:260px;">
+                    </div>
+                </form>
+            </div>
     </div>
 </body>
+    <script>
+        // Lógica de recarga de caja
+        let saldo = 356;
+        const saldoCaja = document.getElementById('saldo-caja');
+        const formRecarga = document.getElementById('form-recarga');
+        const mensajeRecarga = document.getElementById('mensaje-recarga');
+        formRecarga.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const cantidad = parseInt(document.getElementById('recarga').value, 10);
+            if (!isNaN(cantidad) && cantidad > 0) {
+                saldo += cantidad;
+                saldoCaja.textContent = saldo;
+                mensajeRecarga.style.display = 'block';
+                setTimeout(() => { mensajeRecarga.style.display = 'none'; }, 2000);
+                formRecarga.reset();
+            }
+        });
+    </script>
 </html>
