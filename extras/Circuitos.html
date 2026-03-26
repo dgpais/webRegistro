@@ -7,29 +7,67 @@
     <style>
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f7f7f7; margin: 0; }
         *, *::before, *::after { box-sizing: border-box; }
-        .container { max-width: 700px; margin: 4rem auto; background: #fff; border-radius: 18px; box-shadow: 0 8px 32px rgba(0,0,0,0.12); padding: 2.5rem; text-align: center; }
+        .container { max-width: 1100px; margin: 4rem auto; background: #fff; border-radius: 18px; box-shadow: 0 8px 32px rgba(0,0,0,0.12); padding: 2.5rem; text-align: center; }
         .header { font-size: 2rem; font-weight: 700; color: #1a202c; margin-bottom: 2rem; }
         table.circuito-table { width: 100%; margin-bottom: 2.5rem; background: #f7fafc; border-radius: 14px; box-shadow: 0 2px 8px rgba(122,155,158,0.07); overflow: hidden; table-layout: fixed; }
         table.circuito-table td { vertical-align: top; padding: 1.2rem; }
         table.circuito-table img { width: 100%; max-width: 120px; border-radius: 12px; box-shadow: 0 2px 8px #bbb; }
-        form.circuito-form { background: #fff; padding: 1.1rem 1rem; border-radius: 12px; box-shadow: 0 2px 8px #eee; max-width: 100%; box-sizing: border-box; }
-        form.circuito-form label { font-weight: 600; color: #4a5568; font-size: 0.97rem; }
-        form.circuito-form input[type="number"],
-        form.circuito-form input[type="date"] { width: 100%; margin-bottom: 0.7rem; padding: 0.5rem 0.7rem; border-radius: 8px; border: 1.5px solid #e2e8f0; box-sizing: border-box; }
-        form.circuito-form button { margin-top: 0.7rem; padding: 0.4rem 1.2rem; background: #7a9b9e; color: #fff; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; }
+        form.circuito-form {
+            background: #fff;
+            padding: 1.1rem 1.2rem 1.3rem 1.2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px #eee;
+            max-width: 340px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+            align-items: stretch;
+        }
+        .circuito-form-row {
+            display: flex;
+            flex-direction: row;
+            gap: 1.1rem;
+            align-items: center;
+        }
+        .circuito-form-label {
+            flex: 0 0 90px;
+            font-weight: 600;
+            color: #4a5568;
+            font-size: 0.97rem;
+        }
+        .circuito-form-input {
+            flex: 1 1 auto;
+            padding: 0.5rem 0.7rem;
+            border-radius: 8px;
+            border: 1.5px solid #e2e8f0;
+            font-size: 1rem;
+        }
+        form.circuito-form button {
+            margin-top: 0.7rem;
+            padding: 0.5rem 1.5rem;
+            background: #7a9b9e;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            align-self: flex-end;
+        }
     </style>
 </head>
 <body>
+    <a href="../home.html" style="position:absolute;top:30px;left:30px;z-index:2;text-decoration:none;background:#fff;padding:0.6rem 1.2rem;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.08);font-weight:600;color:#1a202c;transition:background 0.2s;">⟵ Volver a Home</a>
     <div class="container">
         <div class="header">Circuitos Turísticos</div>
         <table style="width:100%;margin-bottom:2.5rem;background:#f7fafc;border-radius:14px;box-shadow:0 2px 8px rgba(122,155,158,0.07);overflow:hidden;">
             <tr>
-                <td style="width:28%;text-align:center;">
+                <td style="width:22%;text-align:center;">
                     <img src="../images/españa.jpg" alt="Circuito España">
                     <div style="font-weight:700;font-size:1.1rem;margin-top:0.7rem;color:#1976d2;">España Monumental</div>
                 </td>
-                <td style="width:44%;">
-                    <div style="text-align:left;font-size:1.01rem;line-height:1.6;">
+                <td style="width:56%;">
+                    <div style="text-align:left;font-size:1.08rem;line-height:1.7;">
                         <b>Itinerario:</b><br>
                         Día 1: Madrid (Museo del Prado, Palacio Real, Puerta del Sol).<br>
                         Día 2: Toledo (Catedral, Alcázar, Barrio Judío).<br>
@@ -43,26 +81,29 @@
                         <b>Incluye:</b> Entradas, visitas guiadas, traslados y alojamiento 4★.<br>
                     </div>
                 </td>
-                <td style="width:28%;vertical-align:top;padding:1.2rem;">
-                    <form style="background:#fff;padding:1.1rem 1rem;border-radius:12px;box-shadow:0 2px 8px #eee;">
-                        <form class="circuito-form">
-                            <label for="personas-espana">Personas</label>
-                            <input type="number" id="personas-espana" min="1" max="20">
-                            <label for="fecha-espana">Fecha</label>
-                            <input type="date" id="fecha-espana">
-                            <button type="button">Contratar</button>
-                        </form>
+                <td style="width:22%;vertical-align:top;padding:1.2rem;">
+                    <form class="circuito-form">
+                        <div class="circuito-form-row">
+                            <label for="personas-espana" class="circuito-form-label">Personas</label>
+                            <input type="number" id="personas-espana" min="1" max="20" class="circuito-form-input">
+                        </div>
+                        <div class="circuito-form-row">
+                            <label for="fecha-espana" class="circuito-form-label">Fecha</label>
+                            <input type="date" id="fecha-espana" class="circuito-form-input">
+                        </div>
+                        <button type="button">Contratar</button>
+                    </form>
                 </td>
             </tr>
         </table>
         <table style="width:100%;margin-bottom:2.5rem;background:#f7fafc;border-radius:14px;box-shadow:0 2px 8px rgba(122,155,158,0.07);overflow:hidden;">
             <tr>
-                <td style="width:28%;text-align:center;">
+                <td style="width:22%;text-align:center;">
                     <img src="../images/italia.jpg" alt="Circuito Italia">
                     <div style="font-weight:700;font-size:1.1rem;margin-top:0.7rem;color:#1976d2;">Italia Clásica</div>
                 </td>
-                <td style="width:44%;">
-                    <div style="text-align:left;font-size:1.01rem;line-height:1.6;">
+                <td style="width:56%;">
+                    <div style="text-align:left;font-size:1.08rem;line-height:1.7;">
                         <b>Itinerario:</b><br>
                         Día 1: Roma (Coliseo, Foro Romano, Fontana di Trevi).<br>
                         Día 2: Florencia (Duomo, Galería Uffizi, Ponte Vecchio).<br>
@@ -75,26 +116,29 @@
                         <b>Incluye:</b> Entradas, visitas guiadas, traslados y alojamiento 4★.<br>
                     </div>
                 </td>
-                <td style="width:28%;vertical-align:top;padding:1.2rem;">
-                    <form style="background:#fff;padding:1.1rem 1rem;border-radius:12px;box-shadow:0 2px 8px #eee;">
-                        <form class="circuito-form">
-                            <label for="personas-italia">Personas</label>
-                            <input type="number" id="personas-italia" min="1" max="20">
-                            <label for="fecha-italia">Fecha</label>
-                            <input type="date" id="fecha-italia">
-                            <button type="button">Contratar</button>
-                        </form>
+                <td style="width:22%;vertical-align:top;padding:1.2rem;">
+                    <form class="circuito-form">
+                        <div class="circuito-form-row">
+                            <label for="personas-italia" class="circuito-form-label">Personas</label>
+                            <input type="number" id="personas-italia" min="1" max="20" class="circuito-form-input">
+                        </div>
+                        <div class="circuito-form-row">
+                            <label for="fecha-italia" class="circuito-form-label">Fecha</label>
+                            <input type="date" id="fecha-italia" class="circuito-form-input">
+                        </div>
+                        <button type="button">Contratar</button>
+                    </form>
                 </td>
             </tr>
         </table>
         <table style="width:100%;margin-bottom:2.5rem;background:#f7fafc;border-radius:14px;box-shadow:0 2px 8px rgba(122,155,158,0.07);overflow:hidden;">
             <tr>
-                <td style="width:28%;text-align:center;">
+                <td style="width:22%;text-align:center;">
                     <img src="../images/egipto.jpg" alt="Circuito Egipto">
                     <div style="font-weight:700;font-size:1.1rem;margin-top:0.7rem;color:#1976d2;">Egipto Milenario</div>
                 </td>
-                <td style="width:44%;">
-                    <div style="text-align:left;font-size:1.01rem;line-height:1.6;">
+                <td style="width:56%;">
+                    <div style="text-align:left;font-size:1.08rem;line-height:1.7;">
                         <b>Itinerario:</b><br>
                         Día 1: El Cairo (Pirámides de Giza, Esfinge, Museo Egipcio).<br>
                         Día 2: Luxor (Templo de Karnak, Valle de los Reyes).<br>
@@ -107,15 +151,18 @@
                         <b>Incluye:</b> Entradas, visitas guiadas, traslados, crucero y alojamiento 4★.<br>
                     </div>
                 </td>
-                <td style="width:28%;vertical-align:top;padding:1.2rem;">
-                    <form style="background:#fff;padding:1.1rem 1rem;border-radius:12px;box-shadow:0 2px 8px #eee;">
-                        <form class="circuito-form">
-                            <label for="personas-egipto">Personas</label>
-                            <input type="number" id="personas-egipto" min="1" max="20">
-                            <label for="fecha-egipto">Fecha</label>
-                            <input type="date" id="fecha-egipto">
-                            <button type="button">Contratar</button>
-                        </form>
+                <td style="width:22%;vertical-align:top;padding:1.2rem;">
+                    <form class="circuito-form">
+                        <div class="circuito-form-row">
+                            <label for="personas-egipto" class="circuito-form-label">Personas</label>
+                            <input type="number" id="personas-egipto" min="1" max="20" class="circuito-form-input">
+                        </div>
+                        <div class="circuito-form-row">
+                            <label for="fecha-egipto" class="circuito-form-label">Fecha</label>
+                            <input type="date" id="fecha-egipto" class="circuito-form-input">
+                        </div>
+                        <button type="button">Contratar</button>
+                    </form>
                 </td>
             </tr>
         </table>
