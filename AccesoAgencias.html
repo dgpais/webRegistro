@@ -281,7 +281,7 @@
                 Búsqueda Agencias de Viajes
             </span>
             <button id="homeBtn" class="logout-btn" style="margin-right: 1rem; background: linear-gradient(135deg, #7a9b9e 0%, #6b8b8e 100%);">Home</button>
-            <button id="logoutBtn" class="logout-btn">Cerrar sesión</button>
+            <button id="logoutBtn" class="logout-btn">Contratar</button>
         </div>
 
         <div class="search-container">
@@ -380,10 +380,7 @@
         });
         // Logout
         logoutBtn.addEventListener("click", function () {
-            // Limpiar sesión
-            sessionStorage.removeItem("authenticated");
-            sessionStorage.removeItem("username");
-            window.location.href = "index.html";
+            window.location.href = "reservaok.html";
         });
 
         // Búsqueda
@@ -410,11 +407,12 @@
             pageProducts.forEach((product) => {
                 const row = document.createElement("tr");
                 row.innerHTML = `
+                    <td><input type='checkbox' /></td>
                     <td><strong>${product.id}</strong></td>
                     <td>${product.marca}</td>
                     <td>${product.modelo}</td>
                     <td><strong>${product.stock}</strong></td>
-                    <td><strong style="color: #ef4855;">€${product.precio.toFixed(2)}</strong></td>
+                    <td><strong style=\"color: #ef4855;\">€${product.precio.toFixed(2)}</strong></td>
                 `;
                 productsTable.appendChild(row);
             });

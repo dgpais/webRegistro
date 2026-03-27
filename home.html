@@ -205,7 +205,10 @@
                 <img class="logo-small" src="images/Logo.png" alt="Logo" />
                 ENCUENTRA TU MEJOR VIAJE
             </span>
-            <button id="logoutBtn" class="logout-btn">Cerrar sesión</button>
+            <div style="display:flex;flex-direction:column;align-items:flex-end;gap:0.7rem;">
+                <button id="accountBtn" class="logout-btn" style="margin-bottom:0;">Mi cuenta</button>
+                <button id="logoutBtn" class="logout-btn">Cerrar sesión</button>
+            </div>
         </div>
     </div>
 
@@ -365,6 +368,10 @@
             sessionStorage.removeItem("authenticated");
             sessionStorage.removeItem("username");
             window.location.href = "index.html";
+        });
+        // Botón Mi cuenta
+        document.getElementById("accountBtn").addEventListener("click", function () {
+            window.location.href = "register.html";
         });
     </script>
 </body>
