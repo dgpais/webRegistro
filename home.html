@@ -208,8 +208,17 @@
                 <span style="display:flex;align-items:center;height:100%;">ENCUENTRA TU MEJOR VIAJE</span>
             </span>
             <div style="display:flex;flex-direction:column;align-items:flex-end;gap:0.7rem;">
-                <button id="accountBtn" class="logout-btn" style="margin-bottom:0;background:#1a237e;color:#fff;">Mi cuenta</button>
+                <div style="display:flex;flex-direction:row;gap:0.7rem;align-items:center;">
+                    <button id="accountBtn" class="logout-btn" style="margin-bottom:0;background:#1a237e;color:#fff;">Mi cuenta</button>
+                    <button id="loginBtn" class="logout-btn" style="margin-bottom:0;background:#ffb74d;color:#fff;">Login</button>
+                </div>
                 <button id="logoutBtn" class="logout-btn">Cerrar sesión</button>
+            </div>
+            <div id="userInfoBox" style="display:none;margin-left:1.5rem;align-self:center;">
+                <table style="border:none;background:transparent;box-shadow:none;font-size:1rem;">
+                    <tr><td style="font-weight:600;color:#1a237e;">Usuario logueado:</td></tr>
+                    <tr><td id="userNameCell" style="color:#ef4855;font-weight:700;"></td></tr>
+                </table>
             </div>
         </div>
     </div>
@@ -375,6 +384,21 @@
         document.getElementById("accountBtn").addEventListener("click", function () {
             window.location.href = "register.html";
         });
+        // Botón Login
+        document.getElementById("loginBtn").addEventListener("click", function () {
+            window.location.href = "login.html";
+        });
+
+        // Mostrar usuario logueado si existe
+        const userInfoBox = document.getElementById("userInfoBox");
+        const userNameCell = document.getElementById("userNameCell");
+        const username = sessionStorage.getItem("username");
+        if (username) {
+            userInfoBox.style.display = "block";
+            userNameCell.textContent = username;
+        } else {
+            userInfoBox.style.display = "none";
+        }
     </script>
 </body>
 </html>

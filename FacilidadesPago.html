@@ -66,12 +66,30 @@
             font-weight: 700;
             margin-bottom: 2rem;
         }
+        .action-btn-sobrenosotros {
+            background: #ffb74d;
+            color: #fff;
+            font-weight: 700;
+            border: none;
+            border-radius: 10px;
+            padding: 0.7rem 1.5rem;
+            font-size: 1.08rem;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+            box-shadow: 0 2px 8px rgba(239,72,85,0.08);
+            margin-bottom: 1.2rem;
+        }
+        .action-btn-sobrenosotros:hover {
+            background: linear-gradient(135deg, #ef4855 0%, #e63946 100%);
+            color: #fff;
+        }
     </style>
 </head>
 <body>
     <a href="home.html" style="position:absolute;top:30px;left:30px;z-index:2;text-decoration:none;background:#fff;padding:0.6rem 1.2rem;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.08);font-weight:600;color:#1a202c;transition:background 0.2s;">⟵ Volver a Home</a>
     <div class="container">
-        <div class="page-title">Facilidades de Pago</div>
+        <a href="SobreNosotros.html" class="action-btn-sobrenosotros">Sobre Nosotros</a>
+        <div class="page-title">Facilidades de Pago <span style="font-size:0.85rem;font-weight:400;color:#ef4855;vertical-align:middle;">(requiere estar logueado)</span></div>
         <!-- Contenido aquí -->
             <!-- Caja de Dinero -->
             <div style="background:#e3f2fd;padding:1.5rem 2rem 2rem 2rem;border-radius:16px;margin-bottom:2.2rem;box-shadow:0 2px 12px rgba(122,155,158,0.08);max-width:420px;margin-left:auto;margin-right:auto;">
@@ -121,6 +139,13 @@
     </div>
 </body>
     <script>
+        // Verificar autenticación al cargar la página
+        if (!sessionStorage.getItem("authenticated")) {
+            alert("Debe iniciar sesión para acceder a esta página");
+            window.location.href = "login.html";
+        }
+                   
+        
         // Lógica de recarga de caja
         let saldo = 356;
         const saldoCaja = document.getElementById('saldo-caja');
