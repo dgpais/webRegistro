@@ -294,6 +294,7 @@
             <table class="products-table">
                 <thead>
                     <tr>
+                        <th>Contratar</th>
                         <th>ID</th>
                         <th>Ciudad</th>
                         <th>Hotel</th>
@@ -313,7 +314,7 @@
         //if (!sessionStorage.getItem("authenticated")) {
         //    alert("Debe iniciar sesión para acceder a esta página");
         //    window.location.href = "login.html";
-        }
+        //}
 
         // Datos de productos
         const products = [
@@ -493,11 +494,12 @@
             pageProducts.forEach((product) => {
                 const row = document.createElement("tr");
                 row.innerHTML = `
+                    <td><input type='checkbox' /></td>
                     <td><strong>${product.id}</strong></td>
                     <td>${product.marca}</td>
                     <td>${product.modelo}</td>
                     <td><strong>${product.stock}</strong></td>
-                    <td><strong style="color: #ef4855;">€${product.precio.toFixed(2)}</strong></td>
+                    <td><strong style=\"color: #ef4855;\">€${product.precio.toFixed(2)}</strong></td>
                 `;
                 productsTable.appendChild(row);
             });

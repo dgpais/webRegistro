@@ -280,8 +280,7 @@
                 <img class="logo-small" src="images/Logo.png" alt="Logo" />
                 Búsqueda Agencias de Viajes
             </span>
-            <button id="homeBtn" class="logout-btn" style="margin-right: 1rem; background: linear-gradient(135deg, #7a9b9e 0%, #6b8b8e 100%);">Home</button>
-            <button id="logoutBtn" class="logout-btn">Home</button>
+            <button id="logoutBtn" class="logout-btn">Cerrar sesión</button>
         </div>
 
         <div class="search-container">
@@ -294,7 +293,6 @@
             <table class="products-table">
                 <thead>
                     <tr>
-                        <th>Home</th>
                         <th>ID</th>
                         <th>Agencia</th>
                         <th>Web</th>
@@ -376,9 +374,7 @@
         const resultsInfo = document.getElementById("resultsInfo");
 
         // Botón Home
-        document.getElementById("homeBtn").addEventListener("click", function () {
-            window.location.href = "home.html";
-        });
+        // Botón Home eliminado
         // Logout
         logoutBtn.addEventListener("click", function () {
             window.location.href = "home.html";
@@ -408,10 +404,9 @@
             pageProducts.forEach((product) => {
                 const row = document.createElement("tr");
                 row.innerHTML = `
-                    <td></td>
                     <td><strong>${product.id}</strong></td>
                     <td>${product.marca}</td>
-                    <td>${product.modelo}</td>
+                    <td><a href='agencia.html' style="color:#0077cc; text-decoration:underline;">${product.modelo}</a></td>
                     <td><strong>${product.stock}</strong></td>
                     <td><strong style=\"color: #ef4855;\">€${product.precio.toFixed(2)}</strong></td>
                 `;
