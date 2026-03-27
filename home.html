@@ -23,8 +23,9 @@
             max-width: 1100px;
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: stretch;
             padding: 1.5rem 2.5rem 1.5rem 2.5rem;
+            min-height: 120px;
         }
         .main-flex {
             display: flex;
@@ -133,7 +134,8 @@
             color: #1a202c;
             font-weight: 700;
             display: flex;
-            align-items: flex-start;
+            align-items: center;
+            height: 100%;
             gap: 1rem;
         }
         .logo-small {
@@ -203,7 +205,7 @@
         <div class="header-content">
             <span class="welcome">
                 <img class="logo-small" src="images/Logo.png" alt="Logo" />
-                ENCUENTRA TU MEJOR VIAJE
+                <span style="display:flex;align-items:center;height:100%;">ENCUENTRA TU MEJOR VIAJE</span>
             </span>
             <div style="display:flex;flex-direction:column;align-items:flex-end;gap:0.7rem;">
                 <button id="accountBtn" class="logout-btn" style="margin-bottom:0;background:#1a237e;color:#fff;">Mi cuenta</button>

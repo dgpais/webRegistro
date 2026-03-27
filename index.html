@@ -29,6 +29,12 @@
       text-align: center;
       position: relative;
       z-index: 2;
+      opacity: 0;
+      animation: fadeInMain 1.2s ease 0.2s forwards;
+    }
+    @keyframes fadeInMain {
+      from { opacity: 0; transform: translateY(40px) scale(0.98); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
     }
     .main-title {
       font-family: 'Playfair Display', serif;
@@ -37,7 +43,24 @@
       margin-bottom: 1.2rem;
       letter-spacing: 2px;
       text-shadow: 0 4px 24px rgba(239,72,85,0.10);
+      animation: blinkTitle 2.5s infinite alternate;
     }
+    @keyframes blinkTitle {
+      0% { filter: brightness(1.1) drop-shadow(0 0 0 #ef4855); }
+      60% { filter: brightness(1.2) drop-shadow(0 0 8px #ef4855cc); }
+      100% { filter: brightness(1.05) drop-shadow(0 0 0 #ef4855); }
+    }
+        /* Efecto zoom en imágenes laterales */
+        .side-img-effect {
+          transition: transform 0.35s cubic-bezier(.25,.8,.25,1), box-shadow 0.25s;
+          will-change: transform, box-shadow;
+          cursor: pointer;
+        }
+        .side-img-effect:hover {
+          transform: scale(1.13) rotate(-2deg);
+          box-shadow: 0 8px 32px rgba(239,72,85,0.18), 0 2px 8px rgba(0,0,0,0.10);
+          z-index: 10;
+        }
     .subtitle {
       font-size: 1.5rem;
       color: #1a202c;
@@ -83,6 +106,12 @@
   </style>
 </head>
 <body>
+  <div style="display:flex;align-items:center;justify-content:center;width:100vw;min-height:100vh;">
+    <!-- Imagen izquierda -->
+    <div style="flex:0 0 auto;display:flex;align-items:center;justify-content:center;height:100%;margin-right:2.5vw;">
+      <img src="images/izertis.png" alt="Izertis" class="side-img-effect" style="max-height:220px;max-width:120px;border-radius:18px;box-shadow:0 2px 12px rgba(0,0,0,0.10);background:#fff;padding:0.5rem;" />
+    </div>
+    <!-- Contenido central -->
   <div class="main-container">
     <div class="main-title">EXPLORERS</div>
     <div class="subtitle">Tu agencia de viajes para descubrir el mundo</div>
@@ -92,6 +121,14 @@
       ¡Haz de cada viaje una aventura extraordinaria!<br>
     </div>
     <a class="home-link" href="home.html">Entrar a la web</a>
+    </div>
+    <!-- Imágenes verticales derecha -->
+    <div style="flex:0 0 auto;display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;margin-left:2.5vw;gap:1.2rem;">
+      <img src="images/egipto.jpg" alt="Egipto" class="side-img-effect" style="max-width:90px;max-height:90px;border-radius:14px;box-shadow:0 2px 8px rgba(0,0,0,0.10);background:#fff;padding:0.3rem;" />
+      <img src="images/españa.jpg" alt="España" class="side-img-effect" style="max-width:90px;max-height:90px;border-radius:14px;box-shadow:0 2px 8px rgba(0,0,0,0.10);background:#fff;padding:0.3rem;" />
+      <img src="images/parques.jpg" alt="Parques" class="side-img-effect" style="max-width:90px;max-height:90px;border-radius:14px;box-shadow:0 2px 8px rgba(0,0,0,0.10);background:#fff;padding:0.3rem;" />
+    </div>
+  </div>
   </div>
 </body>
 </html>
