@@ -15,8 +15,41 @@
             justify-content: center;
             padding: 2rem;
             position: relative;
-            overflow: hidden;
+            overflow-y: auto;
+            overflow-x: hidden;
         }
+                .btn-volver-home {
+                    position: absolute;
+                    top: 30px;
+                    left: 30px;
+                    z-index: 2;
+                    text-decoration: none;
+                    background: #fff;
+                    padding: 0.6rem 1.2rem;
+                    border-radius: 8px;
+                    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+                    font-weight: 600;
+                    color: #1a202c;
+                    transition: background 0.2s;
+                }
+                .btn-volver-home:hover {
+                    background: #e3f2fd;
+                }
+                .btn-contratar {
+                    background: #ef4855;
+                    color: #fff;
+                    padding: 0.5rem 1.2rem;
+                    border: none;
+                    border-radius: 8px;
+                    font-weight: 600;
+                    cursor: pointer;
+                    font-size: 1rem;
+                    margin-top: 0.7rem;
+                    transition: background 0.2s;
+                }
+                .btn-contratar:hover {
+                    background: #e63946;
+                }
         body::before {
             content: "";
             position: absolute;
@@ -76,6 +109,7 @@
     </style>
 </head>
 <body>
+    <a href="../home.html" class="btn-volver-home">&#x27F5; Volver a Home</a>
     <div class="container">
         <div class="page-title">OFERTAS</div>
         <!-- Europa -->
@@ -84,83 +118,149 @@
             <div style="background:#f7fafc;border-radius:0 0 12px 12px;padding:1.2rem 1.2rem 1.5rem 1.2rem;margin-bottom:1.2rem;">
                 <h3 style="color:#1a202c;margin-bottom:0.5rem;">París romántico 4 días</h3>
                 <p>Vuelo + hotel 3* + desayuno. Salidas desde Madrid y Barcelona. Desde 299€.</p>
-                <button onclick="location.href='reservaok.html'" class="logout-btn" style="margin-top:0.7rem;">Contratar</button>
+                <form onsubmit="event.preventDefault();window.location.href='../reservaok.html';">
+                  <button type="submit" class="btn-contratar">Contratar</button>
+                </form>
             </div>
             <div style="background:#f7fafc;border-radius:0 0 12px 12px;padding:1.2rem 1.2rem 1.5rem 1.2rem;margin-bottom:1.2rem;">
                 <h3 style="color:#1a202c;margin-bottom:0.5rem;">Italia clásica 7 días</h3>
                 <p>Roma, Florencia y Venecia. Circuito con guía y media pensión. Desde 599€.</p>
-                <button onclick="location.href='reservaok.html'" class="logout-btn" style="margin-top:0.7rem;">Contratar</button>
+                <form onsubmit="event.preventDefault();window.location.href='../reservaok.html';">
+                  <button type="submit" class="btn-contratar">Contratar</button>
+                </form>
+            </div>
+            <div style="background:#f7fafc;border-radius:0 0 12px 12px;padding:1.2rem 1.2rem 1.5rem 1.2rem;margin-bottom:1.2rem;">
+                <h3 style="color:#1a202c;margin-bottom:0.5rem;">Grecia y Santorini 6 días</h3>
+                <p>Atenas, crucero por islas y estancia en Santorini. Desde 499€.</p>
+                <form onsubmit="event.preventDefault();window.location.href='../reservaok.html';">
+                  <button type="submit" class="btn-contratar">Contratar</button>
+                </form>
             </div>
         </div>
         <!-- Asia -->
         <div style="margin:2.5rem 0 1.5rem 0;">
             <h2 style="background:linear-gradient(90deg,#6b8b8e 60%,#ef4855 100%);color:white;padding:0.7rem 0;border-radius:12px 12px 0 0;font-size:1.4rem;letter-spacing:1px;">Asia</h2>
-            <div style="background:#f7fafc;border-radius:0 0 12px 12px;padding:1.2rem 1.2rem 1.5rem 1.2rem;margin-bottom:1.2rem;">
-                <h3 style="color:#1a202c;margin-bottom:0.5rem;">Japón Sakura 10 días</h3>
-                <p>Tokio, Kioto y Osaka en temporada de cerezos. Desde 1.299€.</p>
-                <button onclick="location.href='reservaok.html'" class="logout-btn" style="margin-top:0.7rem;">Contratar</button>
-            </div>
-            <div style="background:#f7fafc;border-radius:0 0 12px 12px;padding:1.2rem 1.2rem 1.5rem 1.2rem;margin-bottom:1.2rem;">
-                <h3 style="color:#1a202c;margin-bottom:0.5rem;">Tailandia exótica 8 días</h3>
-                <p>Bangkok y playas de Phuket. Todo incluido. Desde 899€.</p>
-                <button onclick="location.href='reservaok.html'" class="logout-btn" style="margin-top:0.7rem;">Contratar</button>
-            </div>
+                        <div style="background:#f7fafc;border-radius:0 0 12px 12px;padding:1.2rem 1.2rem 1.5rem 1.2rem;margin-bottom:1.2rem;">
+                                <h3 style="color:#1a202c;margin-bottom:0.5rem;">Japón Sakura 10 días</h3>
+                                <p>Tokio, Kioto y Osaka en temporada de cerezos. Desde 1.299€.</p>
+                                <form onsubmit="event.preventDefault();window.location.href='../reservaok.html';">
+                                    <button type="submit" class="btn-contratar">Contratar</button>
+                                </form>
+                        </div>
+                        <div style="background:#f7fafc;border-radius:0 0 12px 12px;padding:1.2rem 1.2rem 1.5rem 1.2rem;margin-bottom:1.2rem;">
+                                <h3 style="color:#1a202c;margin-bottom:0.5rem;">Tailandia exótica 8 días</h3>
+                                <p>Bangkok y playas de Phuket. Todo incluido. Desde 899€.</p>
+                                <form onsubmit="event.preventDefault();window.location.href='../reservaok.html';">
+                                    <button type="submit" class="btn-contratar">Contratar</button>
+                                </form>
+                        </div>
+                        <div style="background:#f7fafc;border-radius:0 0 12px 12px;padding:1.2rem 1.2rem 1.5rem 1.2rem;margin-bottom:1.2rem;">
+                                <h3 style="color:#1a202c;margin-bottom:0.5rem;">Vietnam y Camboya 12 días</h3>
+                                <p>Hanoi, Bahía de Halong, Siem Reap y templos de Angkor. Desde 1.399€.</p>
+                                <form onsubmit="event.preventDefault();window.location.href='../reservaok.html';">
+                                    <button type="submit" class="btn-contratar">Contratar</button>
+                                </form>
+                        </div>
         </div>
         <!-- América del Norte -->
         <div style="margin:2.5rem 0 1.5rem 0;">
             <h2 style="background:linear-gradient(90deg,#5c7b7e 60%,#ef4855 100%);color:white;padding:0.7rem 0;border-radius:12px 12px 0 0;font-size:1.4rem;letter-spacing:1px;">América del Norte</h2>
-            <div style="background:#f7fafc;border-radius:0 0 12px 12px;padding:1.2rem 1.2rem 1.5rem 1.2rem;margin-bottom:1.2rem;">
-                <h3 style="color:#1a202c;margin-bottom:0.5rem;">Costa Oeste USA 12 días</h3>
-                <p>San Francisco, Las Vegas, Los Ángeles y parques nacionales. Desde 1.499€.</p>
-                <button onclick="location.href='reservaok.html'" class="logout-btn" style="margin-top:0.7rem;">Contratar</button>
-            </div>
-            <div style="background:#f7fafc;border-radius:0 0 12px 12px;padding:1.2rem 1.2rem 1.5rem 1.2rem;margin-bottom:1.2rem;">
-                <h3 style="color:#1a202c;margin-bottom:0.5rem;">Canadá natural 9 días</h3>
-                <p>Montreal, Quebec y Niágara. Circuito con excursiones. Desde 1.199€.</p>
-                <button onclick="location.href='reservaok.html'" class="logout-btn" style="margin-top:0.7rem;">Contratar</button>
-            </div>
+                        <div style="background:#f7fafc;border-radius:0 0 12px 12px;padding:1.2rem 1.2rem 1.5rem 1.2rem;margin-bottom:1.2rem;">
+                                <h3 style="color:#1a202c;margin-bottom:0.5rem;">Costa Oeste USA 12 días</h3>
+                                <p>San Francisco, Las Vegas, Los Ángeles y parques nacionales. Desde 1.499€.</p>
+                                <form onsubmit="event.preventDefault();window.location.href='../reservaok.html';">
+                                    <button type="submit" class="btn-contratar">Contratar</button>
+                                </form>
+                        </div>
+                        <div style="background:#f7fafc;border-radius:0 0 12px 12px;padding:1.2rem 1.2rem 1.5rem 1.2rem;margin-bottom:1.2rem;">
+                                <h3 style="color:#1a202c;margin-bottom:0.5rem;">Canadá natural 9 días</h3>
+                                <p>Montreal, Quebec y Niágara. Circuito con excursiones. Desde 1.199€.</p>
+                                <form onsubmit="event.preventDefault();window.location.href='../reservaok.html';">
+                                    <button type="submit" class="btn-contratar">Contratar</button>
+                                </form>
+                        </div>
+                        <div style="background:#f7fafc;border-radius:0 0 12px 12px;padding:1.2rem 1.2rem 1.5rem 1.2rem;margin-bottom:1.2rem;">
+                                <h3 style="color:#1a202c;margin-bottom:0.5rem;">Nueva York y Cataratas 7 días</h3>
+                                <p>Tour por Nueva York y excursión a las Cataratas del Niágara. Desde 1.099€.</p>
+                                <form onsubmit="event.preventDefault();window.location.href='../reservaok.html';">
+                                    <button type="submit" class="btn-contratar">Contratar</button>
+                                </form>
+                        </div>
         </div>
         <!-- América del Sur -->
         <div style="margin:2.5rem 0 1.5rem 0;">
             <h2 style="background:linear-gradient(90deg,#7a9b9e 60%,#ef4855 100%);color:white;padding:0.7rem 0;border-radius:12px 12px 0 0;font-size:1.4rem;letter-spacing:1px;">América del Sur</h2>
-            <div style="background:#f7fafc;border-radius:0 0 12px 12px;padding:1.2rem 1.2rem 1.5rem 1.2rem;margin-bottom:1.2rem;">
-                <h3 style="color:#1a202c;margin-bottom:0.5rem;">Perú y Machu Picchu 8 días</h3>
-                <p>Lima, Cusco, Valle Sagrado y la ciudadela inca. Desde 1.099€.</p>
-                <button onclick="location.href='reservaok.html'" class="logout-btn" style="margin-top:0.7rem;">Contratar</button>
-            </div>
-            <div style="background:#f7fafc;border-radius:0 0 12px 12px;padding:1.2rem 1.2rem 1.5rem 1.2rem;margin-bottom:1.2rem;">
-                <h3 style="color:#1a202c;margin-bottom:0.5rem;">Argentina y Patagonia 12 días</h3>
-                <p>Buenos Aires, Calafate y glaciares. Desde 1.399€.</p>
-                <button onclick="location.href='reservaok.html'" class="logout-btn" style="margin-top:0.7rem;">Contratar</button>
-            </div>
+                        <div style="background:#f7fafc;border-radius:0 0 12px 12px;padding:1.2rem 1.2rem 1.5rem 1.2rem;margin-bottom:1.2rem;">
+                                <h3 style="color:#1a202c;margin-bottom:0.5rem;">Perú y Machu Picchu 8 días</h3>
+                                <p>Lima, Cusco, Valle Sagrado y la ciudadela inca. Desde 1.099€.</p>
+                                <form onsubmit="event.preventDefault();window.location.href='../reservaok.html';">
+                                    <button type="submit" class="btn-contratar">Contratar</button>
+                                </form>
+                        </div>
+                        <div style="background:#f7fafc;border-radius:0 0 12px 12px;padding:1.2rem 1.2rem 1.5rem 1.2rem;margin-bottom:1.2rem;">
+                                <h3 style="color:#1a202c;margin-bottom:0.5rem;">Argentina y Patagonia 12 días</h3>
+                                <p>Buenos Aires, Calafate y glaciares. Desde 1.399€.</p>
+                                <form onsubmit="event.preventDefault();window.location.href='../reservaok.html';">
+                                    <button type="submit" class="btn-contratar">Contratar</button>
+                                </form>
+                        </div>
+                        <div style="background:#f7fafc;border-radius:0 0 12px 12px;padding:1.2rem 1.2rem 1.5rem 1.2rem;margin-bottom:1.2rem;">
+                                <h3 style="color:#1a202c;margin-bottom:0.5rem;">Brasil y Río de Janeiro 9 días</h3>
+                                <p>Río, Iguazú y Salvador de Bahía. Desde 1.299€.</p>
+                                <form onsubmit="event.preventDefault();window.location.href='../reservaok.html';">
+                                    <button type="submit" class="btn-contratar">Contratar</button>
+                                </form>
+                        </div>
         </div>
         <!-- África -->
         <div style="margin:2.5rem 0 1.5rem 0;">
             <h2 style="background:linear-gradient(90deg,#4a5568 60%,#ef4855 100%);color:white;padding:0.7rem 0;border-radius:12px 12px 0 0;font-size:1.4rem;letter-spacing:1px;">África</h2>
-            <div style="background:#f7fafc;border-radius:0 0 12px 12px;padding:1.2rem 1.2rem 1.5rem 1.2rem;margin-bottom:1.2rem;">
-                <h3 style="color:#1a202c;margin-bottom:0.5rem;">Marruecos imperial 6 días</h3>
-                <p>Marrakech, Fez y Casablanca. Circuito con guía. Desde 499€.</p>
-                <button onclick="location.href='reservaok.html'" class="logout-btn" style="margin-top:0.7rem;">Contratar</button>
-            </div>
-            <div style="background:#f7fafc;border-radius:0 0 12px 12px;padding:1.2rem 1.2rem 1.5rem 1.2rem;margin-bottom:1.2rem;">
-                <h3 style="color:#1a202c;margin-bottom:0.5rem;">Safari Kenia y Tanzania 10 días</h3>
-                <p>Parques nacionales y reservas. Pensión completa. Desde 1.799€.</p>
-                <button onclick="location.href='reservaok.html'" class="logout-btn" style="margin-top:0.7rem;">Contratar</button>
-            </div>
+                        <div style="background:#f7fafc;border-radius:0 0 12px 12px;padding:1.2rem 1.2rem 1.5rem 1.2rem;margin-bottom:1.2rem;">
+                                <h3 style="color:#1a202c;margin-bottom:0.5rem;">Marruecos imperial 6 días</h3>
+                                <p>Marrakech, Fez y Casablanca. Circuito con guía. Desde 499€.</p>
+                                <form onsubmit="event.preventDefault();window.location.href='../reservaok.html';">
+                                    <button type="submit" class="btn-contratar">Contratar</button>
+                                </form>
+                        </div>
+                        <div style="background:#f7fafc;border-radius:0 0 12px 12px;padding:1.2rem 1.2rem 1.5rem 1.2rem;margin-bottom:1.2rem;">
+                                <h3 style="color:#1a202c;margin-bottom:0.5rem;">Safari Kenia y Tanzania 10 días</h3>
+                                <p>Parques nacionales y reservas. Pensión completa. Desde 1.799€.</p>
+                                <form onsubmit="event.preventDefault();window.location.href='../reservaok.html';">
+                                    <button type="submit" class="btn-contratar">Contratar</button>
+                                </form>
+                        </div>
+                        <div style="background:#f7fafc;border-radius:0 0 12px 12px;padding:1.2rem 1.2rem 1.5rem 1.2rem;margin-bottom:1.2rem;">
+                                <h3 style="color:#1a202c;margin-bottom:0.5rem;">Egipto y el Nilo 8 días</h3>
+                                <p>Crucero por el Nilo y visita a las pirámides. Desde 999€.</p>
+                                <form onsubmit="event.preventDefault();window.location.href='../reservaok.html';">
+                                    <button type="submit" class="btn-contratar">Contratar</button>
+                                </form>
+                        </div>
         </div>
         <!-- Oceanía -->
         <div style="margin:2.5rem 0 1.5rem 0;">
             <h2 style="background:linear-gradient(90deg,#3b5360 60%,#ef4855 100%);color:white;padding:0.7rem 0;border-radius:12px 12px 0 0;font-size:1.4rem;letter-spacing:1px;">Oceanía</h2>
-            <div style="background:#f7fafc;border-radius:0 0 12px 12px;padding:1.2rem 1.2rem 1.5rem 1.2rem;margin-bottom:1.2rem;">
-                <h3 style="color:#1a202c;margin-bottom:0.5rem;">Australia esencial 12 días</h3>
-                <p>Sídney, Melbourne y Gran Barrera de Coral. Desde 2.199€.</p>
-                <button onclick="location.href='reservaok.html'" class="logout-btn" style="margin-top:0.7rem;">Contratar</button>
-            </div>
-            <div style="background:#f7fafc;border-radius:0 0 12px 12px;padding:1.2rem 1.2rem 1.5rem 1.2rem;margin-bottom:1.2rem;">
-                <h3 style="color:#1a202c;margin-bottom:0.5rem;">Nueva Zelanda aventura 10 días</h3>
-                <p>Auckland, Rotorua y Queenstown. Desde 2.399€.</p>
-                <button onclick="location.href='reservaok.html'" class="logout-btn" style="margin-top:0.7rem;">Contratar</button>
-            </div>
+                        <div style="background:#f7fafc;border-radius:0 0 12px 12px;padding:1.2rem 1.2rem 1.5rem 1.2rem;margin-bottom:1.2rem;">
+                                <h3 style="color:#1a202c;margin-bottom:0.5rem;">Australia esencial 12 días</h3>
+                                <p>Sídney, Melbourne y Gran Barrera de Coral. Desde 2.199€.</p>
+                                <form onsubmit="event.preventDefault();window.location.href='../reservaok.html';">
+                                    <button type="submit" class="btn-contratar">Contratar</button>
+                                </form>
+                        </div>
+                        <div style="background:#f7fafc;border-radius:0 0 12px 12px;padding:1.2rem 1.2rem 1.5rem 1.2rem;margin-bottom:1.2rem;">
+                                <h3 style="color:#1a202c;margin-bottom:0.5rem;">Nueva Zelanda aventura 10 días</h3>
+                                <p>Auckland, Rotorua y Queenstown. Desde 2.399€.</p>
+                                <form onsubmit="event.preventDefault();window.location.href='../reservaok.html';">
+                                    <button type="submit" class="btn-contratar">Contratar</button>
+                                </form>
+                        </div>
+                        <div style="background:#f7fafc;border-radius:0 0 12px 12px;padding:1.2rem 1.2rem 1.5rem 1.2rem;margin-bottom:1.2rem;">
+                                <h3 style="color:#1a202c;margin-bottom:0.5rem;">Fiyi y Bora Bora 10 días</h3>
+                                <p>Islas paradisíacas, resorts de lujo y actividades acuáticas. Desde 3.199€.</p>
+                                <form onsubmit="event.preventDefault();window.location.href='../reservaok.html';">
+                                    <button type="submit" class="btn-contratar">Contratar</button>
+                                </form>
+                        </div>
         </div>
     </div>
 </body>
