@@ -1,372 +1,97 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Iniciar Sesión</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg,
-                    #7a9b9e 0%,
-                    #6b8b8e 50%,
-                    #5c7b7e 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        body::before {
-            content: "";
-            position: absolute;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle,
-                    rgba(239, 72, 85, 0.15),
-                    transparent);
-            border-radius: 50%;
-            top: -200px;
-            right: -200px;
-            animation: float 8s ease-in-out infinite;
-        }
-
-        body::after {
-            content: "";
-            position: absolute;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle,
-                    rgba(122, 155, 158, 0.2),
-                    transparent);
-            border-radius: 50%;
-            bottom: -150px;
-            left: -150px;
-            animation: float 10s ease-in-out infinite reverse;
-        }
-
-        @keyframes float {
-
-            0%,
-            100% {
-                transform: translateY(0px);
-            }
-
-            50% {
-                transform: translateY(30px);
-            }
-        }
-
-        .container {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 3rem 2.5rem;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-            width: 100%;
-            max-width: 420px;
-            position: relative;
-            z-index: 1;
-            animation: slideIn 0.5s ease-out;
-        }
-
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .header-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 2.5rem;
-            gap: 1rem;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-        }
-
-        .logo img {
-            width: 50px;
-            height: 50px;
-            animation: fadeIn 0.8s ease-out;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: scale(0.8);
-            }
-
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        h2 {
-            color: #1a202c;
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin: 0;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-            position: relative;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: #4a5568;
-            font-weight: 600;
-            font-size: 0.9rem;
-            letter-spacing: 0.3px;
-        }
-
-        input[type="text"],
-        input[type="password"] {
-            width: 100%;
-            padding: 1rem;
-            border: 2px solid #e2e8f0;
-            border-radius: 12px;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            background: #f7fafc;
-        }
-
-        input[type="text"]:focus,
-        input[type="password"]:focus {
-            outline: none;
-            border-color: #ef4855;
-            background: white;
-            box-shadow: 0 0 0 3px rgba(239, 72, 85, 0.1);
-            transform: translateY(-2px);
-        }
-
-        .checkbox-group {
-            display: flex;
-            align-items: center;
-            margin-bottom: 2rem;
-            padding: 0.5rem 0;
-        }
-
-        .checkbox-group input[type="checkbox"] {
-            margin-right: 0.7rem;
-            transform: scale(1.3);
-            cursor: pointer;
-            accent-color: #ef4855;
-        }
-
-        .checkbox-group label {
-            margin: 0;
-            font-size: 0.9rem;
-            color: #4a5568;
-            cursor: pointer;
-        }
-
-        .btn {
-            width: 100%;
-            padding: 1rem;
-            background: linear-gradient(135deg, #ef4855 0%, #e63946 100%);
-            color: white;
-            border: none;
-            border-radius: 12px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(239, 72, 85, 0.4);
-            letter-spacing: 0.5px;
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(239, 72, 85, 0.6);
-            background: linear-gradient(135deg, #e63946 0%, #d62839 100%);
-        }
-
-        .btn:active {
-            transform: translateY(0);
-        }
-
-        .btn:disabled {
-            background: linear-gradient(135deg, #cbd5e0, #a0aec0);
-            cursor: not-allowed;
-            box-shadow: none;
-        }
-
-        .error {
-            color: #e53e3e;
-            text-align: center;
-            margin-top: 1.5rem;
-            padding: 0.75rem;
-            background: #fff5f5;
-            border-radius: 8px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            animation: shake 0.4s ease;
-        }
-
-        @keyframes shake {
-
-            0%,
-            100% {
-                transform: translateX(0);
-            }
-
-            25% {
-                transform: translateX(-10px);
-            }
-
-            75% {
-                transform: translateX(10px);
-            }
-        }
-
-        .register-link {
-            text-align: center;
-            margin-top: 2rem;
-            padding-top: 1.5rem;
-            border-top: 2px solid #e2e8f0;
-        }
-
-        .register-link p {
-            color: #4a5568;
-            font-size: 0.95rem;
-            margin-bottom: 0.75rem;
-        }
-
-        .register-btn {
-            display: inline-block;
-            color: #ef4855;
-            font-weight: 600;
-            text-decoration: none;
-            padding: 0.75rem 1.5rem;
-            border-radius: 10px;
-            transition: all 0.3s ease;
-            font-size: 1rem;
-        }
-
-        .register-btn:hover {
-            background: #fff5f5;
-            transform: translateY(-2px);
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explorers - Agencia de Viajes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background: linear-gradient(135deg, #7a9b9e 0%, #ef4855 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+      position: relative;
+      overflow: hidden;
+    }
+    .main-container {
+      background: rgba(255,255,255,0.92);
+      border-radius: 32px;
+      box-shadow: 0 12px 48px rgba(0,0,0,0.18);
+      padding: 3.5rem 2.5rem 2.5rem 2.5rem;
+      max-width: 600px;
+      width: 95vw;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+    .main-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      color: #ef4855;
+      margin-bottom: 1.2rem;
+      letter-spacing: 2px;
+      text-shadow: 0 4px 24px rgba(239,72,85,0.10);
+    }
+    .subtitle {
+      font-size: 1.5rem;
+      color: #1a202c;
+      font-weight: 700;
+      margin-bottom: 2.2rem;
+      line-height: 1.3;
+    }
+    .desc {
+      font-size: 1.15rem;
+      color: #444;
+      margin-bottom: 2.5rem;
+      line-height: 1.7;
+    }
+    .home-link {
+      display: inline-block;
+      background: linear-gradient(135deg, #1a237e 0%, #7a9b9e 100%);
+      color: #fff;
+      font-size: 1.2rem;
+      font-weight: 700;
+      padding: 0.9rem 2.2rem;
+      border-radius: 14px;
+      text-decoration: none;
+      box-shadow: 0 4px 18px rgba(26,35,126,0.13);
+      transition: background 0.2s, transform 0.2s;
+      margin-top: 1.2rem;
+    }
+    .home-link:hover {
+      background: linear-gradient(135deg, #ef4855 0%, #e63946 100%);
+      color: #fff;
+      transform: translateY(-2px) scale(1.04);
+    }
+    @media (max-width: 600px) {
+      .main-container {
+        padding: 2rem 0.7rem 1.5rem 0.7rem;
+      }
+      .main-title {
+        font-size: 2rem;
+      }
+      .subtitle {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
 </head>
-
 <body>
-    <div class="container">
-        <div class="header-container">
-            <div class="logo">
-                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjgwIiBoZWlnaHQ9IjI4MCIgdmlld0JveD0iMCAwIDI4MCAyODAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyODAiIGhlaWdodD0iMjgwIiByeD0iMTAiIGZpbGw9IiNGRjU1NjYiLz4KPHRleHQgeD0iNTAlIiB5PSI1OCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSI3MCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIj5pemVydGlzPC90ZXh0Pgo8L3N2Zz4="
-                    alt="izertis" />
-            </div>
-            <h2>Iniciar Sesión</h2>
-        </div>
-        <form id="loginForm">
-            <div class="form-group">
-                <label for="username">Nombre de usuario:</label>
-                <input type="text" id="username" name="username" required />
-            </div>
-
-            <div class="form-group">
-                <label for="password">Contraseña:</label>
-                <input type="password" id="password" name="password" required />
-            </div>
-
-            <div class="checkbox-group">
-                <input type="checkbox" id="terms" name="terms" required />
-                <label for="terms">Acepto los términos de uso</label>
-            </div>
-
-            <button type="submit" class="btn">Entrar</button>
-
-            <div id="errorMessage" class="error" style="display: none"></div>
-        </form>
-
-        <div class="register-link">
-            <p>¿No tienes una cuenta?</p>
-            <a href="register.html" class="register-btn">Regístrate aquí</a>
-            <br>
-        </div>
+  <div class="main-container">
+    <div class="main-title">EXPLORERS</div>
+    <div class="subtitle">Tu agencia de viajes para descubrir el mundo</div>
+    <div class="desc">
+      Viajar es mucho más que moverse de un lugar a otro: es descubrir, aprender, emocionarse y crear recuerdos inolvidables.<br><br>
+      En <b>Explorers</b> te ayudamos a vivir experiencias únicas, a conocer culturas fascinantes y a disfrutar de la belleza de nuestro planeta. <br><br>
+      ¡Haz de cada viaje una aventura extraordinaria!<br>
     </div>
-
-    <script>
-        const loginForm = document.getElementById("loginForm");
-        const errorMessage = document.getElementById("errorMessage");
-
-        // Establecer foco en el campo de usuario al cargar la página
-        window.addEventListener("load", function () {
-            document.getElementById("username").focus();
-        });
-
-        loginForm.addEventListener("submit", function (e) {
-            e.preventDefault();
-
-            const username = document.getElementById("username").value;
-            const password = document.getElementById("password").value;
-            const terms = document.getElementById("terms").checked;
-
-            errorMessage.textContent = "";
-            errorMessage.style.display = "none";
-
-            if (!terms) {
-                errorMessage.textContent = "Debe aceptar los términos de uso";
-                errorMessage.style.display = "block";
-                return;
-            }
-
-            // Obtener usuarios registrados
-            let registeredUsers = JSON.parse(
-                sessionStorage.getItem("registeredUsers") || "[]",
-            );
-
-            // Verificar si el usuario está registrado (buscar por login)
-            const registeredUser = registeredUsers.find(
-                (user) => user.login === username,
-            );
-
-            // Permitir login por defecto o por usuario registrado
-            if (username === "user" && password === "password") {
-                // Usuario por defecto
-                sessionStorage.setItem("authenticated", "true");
-                sessionStorage.setItem("username", "User");
-                window.location.href = "home.html";
-            } else if (registeredUser && password === registeredUser.password) {
-                // Usuario registrado con sus credenciales
-                sessionStorage.setItem("authenticated", "true");
-                sessionStorage.setItem("username", registeredUser.nombre);
-                window.location.href = "home.html";
-            } else if (registeredUser) {
-                errorMessage.textContent = "Contraseña incorrecta";
-                errorMessage.style.display = "block";
-            } else {
-                errorMessage.textContent =
-                    "Usuario no registrado o credenciales incorrectas";
-                errorMessage.style.display = "block";
-            }
-        });
-    </script>
+    <a class="home-link" href="home.html">Entrar a la web</a>
+  </div>
 </body>
-
 </html>
