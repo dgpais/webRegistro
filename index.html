@@ -113,17 +113,61 @@
     </div>
     <!-- Contenido central -->
     <div class="main-container" style="display:flex;flex-direction:column;justify-content:center;align-items:center;min-width:320px;max-width:600px;width:38vw;">
-      <div class="main-title" style="display:flex;align-items:center;justify-content:center;gap:0.7rem;">
-        <img src="images/Logo.png" alt="Logo Explorers" style="height:2.8rem;width:auto;vertical-align:middle;display:inline-block;" />
-        <span style="display:inline-block;line-height:1;">EXPLORERS</span>
-      </div>
-      <div class="subtitle">Tu agencia de viajes para descubrir el mundo</div>
-      <div class="desc">
-        Viajar es mucho más que moverse de un lugar a otro: es descubrir, aprender, emocionarse y crear recuerdos inolvidables.<br><br>
-        En <b>Explorers</b> te ayudamos a vivir experiencias únicas, a conocer culturas fascinantes y a disfrutar de la belleza de nuestro planeta. <br><br>
-        ¡Haz de cada viaje una aventura extraordinaria!<br>
-      </div>
-      <a class="home-link" href="home.html">Entrar a la web</a>
+      <div class="main-title" id="mainTitle" style="display:flex;align-items:center;justify-content:center;gap:0.7rem;opacity:0;"></div>
+      <div class="subtitle" id="mainSubtitle" style="opacity:0;"></div>
+      <div class="desc" id="mainDesc" style="opacity:0;"></div>
+      <a class="home-link" href="home.html" style="margin-top:1.2rem;">Entrar a la web</a>
+      <script>
+        // Animación de texto progresiva para el cuadro central
+        document.addEventListener('DOMContentLoaded', function() {
+          // Textos a animar
+          const titleHTML = '<img src="images/Logo.png" alt="Logo Explorers" style="height:2.8rem;width:auto;vertical-align:middle;display:inline-block;" /> <span style="display:inline-block;line-height:1;">EXPLORERS</span>';
+          const subtitleText = 'Tu agencia de viajes para descubrir el mundo';
+          const descText = 'Viajar es mucho más que moverse de un lugar a otro: es descubrir, aprender, emocionarse y crear recuerdos inolvidables.<br><br>En <b>Explorers</b> te ayudamos a vivir experiencias únicas, a conocer culturas fascinantes y a disfrutar de la belleza de nuestro planeta. <br><br>¡Haz de cada viaje una aventura extraordinaria!<br>';
+          // Elementos
+          const mainTitle = document.getElementById('mainTitle');
+          const mainSubtitle = document.getElementById('mainSubtitle');
+          const mainDesc = document.getElementById('mainDesc');
+          // Animar título (con HTML)
+          setTimeout(() => {
+            mainTitle.innerHTML = titleHTML;
+            mainTitle.style.transition = 'opacity 0.7s';
+            mainTitle.style.opacity = 1;
+          }, 400);
+          // Animar subtítulo
+          setTimeout(() => {
+            let i = 0;
+            mainSubtitle.textContent = '';
+            mainSubtitle.style.transition = 'opacity 0.7s';
+            mainSubtitle.style.opacity = 1;
+            function typeSubtitle() {
+              if (i <= subtitleText.length) {
+                mainSubtitle.textContent = subtitleText.slice(0, i);
+                i++;
+                setTimeout(typeSubtitle, 18);
+              }
+            }
+            typeSubtitle();
+          }, 1100);
+          // Animar descripción
+          setTimeout(() => {
+            let i = 0;
+            let plain = descText.replace(/<br>/g, '\n').replace(/<[^>]+>/g, '');
+            mainDesc.innerHTML = '';
+            mainDesc.style.transition = 'opacity 0.7s';
+            mainDesc.style.opacity = 1;
+            function typeDesc() {
+              if (i <= descText.length) {
+                // Mostrar HTML progresivamente
+                mainDesc.innerHTML = descText.slice(0, i);
+                i++;
+                setTimeout(typeDesc, 7);
+              }
+            }
+            typeDesc();
+          }, 2200);
+        });
+      </script>
     </div>
     <!-- Imágenes verticales derecha -->
     <div style="flex:0 0 38vw;display:flex;flex-direction:column;align-items:center;justify-content:space-between;height:100vh;margin:0;padding:0;gap:1.2rem;max-width:600px;min-width:320px;">
