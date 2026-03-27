@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Explorers - Agencia de Viajes</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
       min-height: 100vh;
@@ -15,7 +15,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+      font-family: 'Quicksand', 'Segoe UI', Arial, sans-serif;
       position: relative;
       overflow: hidden;
     }
@@ -37,7 +37,7 @@
       to { opacity: 1; transform: translateY(0) scale(1); }
     }
     .main-title {
-      font-family: 'Playfair Display', serif;
+      font-family: 'Pacifico', cursive;
       font-size: 2.8rem;
       color: #ef4855;
       margin-bottom: 1.2rem;
@@ -113,15 +113,16 @@
     </div>
     <!-- Contenido central -->
     <div class="main-container" style="display:flex;flex-direction:column;justify-content:center;align-items:center;min-width:320px;max-width:600px;width:38vw;">
-      <div class="main-title" id="mainTitle" style="display:flex;align-items:center;justify-content:center;gap:0.7rem;opacity:0;"></div>
-      <div class="subtitle" id="mainSubtitle" style="opacity:0;"></div>
-      <div class="desc" id="mainDesc" style="opacity:0;"></div>
+      <div class="main-title" id="mainTitle" style="display:flex;align-items:center;justify-content:center;gap:0.7rem;opacity:0;position:relative;top:-2.5rem;color:#102a43;"></div>
+      <div style="height:3.5rem;"></div>
+      <div class="subtitle" id="mainSubtitle" style="opacity:0;color:#102a43;"></div>
+      <div class="desc" id="mainDesc" style="opacity:0;color:#102a43;"></div>
       <a class="home-link" href="home.html" style="margin-top:1.2rem;">Entrar a la web</a>
       <script>
         // Animación de texto progresiva para el cuadro central
         document.addEventListener('DOMContentLoaded', function() {
           // Textos a animar
-          const titleHTML = '<img src="images/Logo.png" alt="Logo Explorers" style="height:2.8rem;width:auto;vertical-align:middle;display:inline-block;" /> <span style="display:inline-block;line-height:1;">EXPLORERS</span>';
+          const titleHTML = '<span style="display:inline-block;line-height:1;">EXPLORERS</span>';
           const subtitleText = 'Tu agencia de viajes para descubrir el mundo';
           const descText = 'Viajar es mucho más que moverse de un lugar a otro: es descubrir, aprender, emocionarse y crear recuerdos inolvidables.<br><br>En <b>Explorers</b> te ayudamos a vivir experiencias únicas, a conocer culturas fascinantes y a disfrutar de la belleza de nuestro planeta. <br><br>¡Haz de cada viaje una aventura extraordinaria!<br>';
           // Elementos
