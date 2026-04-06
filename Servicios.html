@@ -70,9 +70,15 @@
 </head>
 <body>
     <div class="container">
-        <div style="display:flex;justify-content:flex-end;align-items:center;margin-bottom:1.5rem;">
+        <div class="header" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:2.5rem;padding-bottom:1.5rem;border-bottom:2px solid #e2e8f0;">
+            <span></span>
             <button id="homeBtn" class="logout-btn" style="margin-right: 1rem; background: linear-gradient(135deg, #7a9b9e 0%, #6b8b8e 100%);">Home</button>
         </div>
+            <script>
+                document.getElementById('homeBtn').onclick = function() {
+                    window.location.href = 'home.html';
+                };
+            </script>
         <div class="page-title">Servicios</div>
         <table style="width:100%;max-width:700px;margin:0 auto 2rem auto;border-collapse:separate;border-spacing:2rem 1.5rem;">
             <tr>
