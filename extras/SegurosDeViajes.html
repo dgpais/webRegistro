@@ -63,6 +63,12 @@
         <script>
         document.querySelector('form').addEventListener('submit', function(e) {
             e.preventDefault();
+            var reserva = document.getElementById('reserva').value.trim();
+            if (!reserva) {
+                alert('El número de reserva es obligatorio para continuar.');
+                document.getElementById('reserva').focus();
+                return;
+            }
             window.location.href = 'DatosSeguroOK.html';
         });
         </script>
