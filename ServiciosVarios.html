@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Servicios Varios</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #7a9b9e 0%, #6b8b8e 50%, #5c7b7e 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            position: relative;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+        body::before {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(239, 72, 85, 0.15), transparent);
+            border-radius: 50%;
+            top: -200px;
+            right: -200px;
+            animation: float 8s ease-in-out infinite;
+        }
+        body::after {
+            content: "";
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(122, 155, 158, 0.2), transparent);
+            border-radius: 50%;
+            bottom: -150px;
+            left: -150px;
+            animation: float 10s ease-in-out infinite reverse;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(30px); }
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+            width: 100%;
+            max-width: 1100px;
+            position: relative;
+            z-index: 1;
+            animation: slideIn 0.5s ease-out;
+            text-align: center;
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .page-title {
+            font-size: 2rem;
+            color: #1a202c;
+            font-weight: 700;
+            margin-bottom: 2rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0 1.5rem;
+            margin: 0 auto 2rem auto;
+        }
+        th, td {
+            padding: 1.2rem 1rem;
+            background: #f7fafc;
+            border-radius: 14px;
+            vertical-align: top;
+            text-align: left;
+            font-size: 1.08rem;
+        }
+        th {
+            background: #1976d2;
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-align: center;
+        }
+        .icon {
+            font-size: 2.1em;
+            margin-right: 0.7em;
+            vertical-align: middle;
+        }
+        .home-btn {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            z-index: 2;
+            text-decoration: none;
+            background: #fff;
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            font-weight: 600;
+            color: #1a202c;
+            transition: background 0.2s;
+        }
+        .home-btn:hover {
+            background: #f7fafc;
+        }
+        @media (max-width: 900px) {
+            .container { padding: 1.2rem; }
+            th, td { font-size: 0.98rem; padding: 0.7rem 0.5rem; }
+        }
+        @media (max-width: 600px) {
+            .container { padding: 0.5rem; }
+            table, thead, tbody, th, td, tr { display: block; width: 100%; }
+            th, td { border-radius: 10px; margin-bottom: 0.7rem; }
+        }
+    </style>
+</head>
+<body>
+    <a href="home.html" class="home-btn">⟵ Volver a Home</a>
+    <div class="container">
+        <div class="page-title">Servicios Varios de Transporte</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Transporte</th>
+                    <th>Ventajas y Desventajas</th>
+                    <th>Servicios Relacionados</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="icon">🚇</span><b>Metro</b><br>Rápido, urbano, ideal para grandes ciudades.</td>
+                    <td>
+                        <b>Ventajas:</b> Económico, frecuente, evita atascos, permite llevar equipaje de mano.<br>
+                        <b>Desventajas:</b> No llega a zonas rurales, puede estar saturado en horas punta, limitado para equipaje voluminoso.
+                    </td>
+                    <td>
+                        <ul>
+                            <li><a href="#">metrocity.com/billetes</a></li>
+                            <li><a href="#">metrocity.com/horarios</a></li>
+                            <li><a href="#">metrocity.com/mapa</a></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span class="icon">✈️</span><b>Avión</b><br>Ideal para largas distancias y viajes internacionales.</td>
+                    <td>
+                        <b>Ventajas:</b> Muy rápido, conecta países y continentes, equipaje facturado disponible.<br>
+                        <b>Desventajas:</b> Precio elevado, controles de seguridad, restricciones de equipaje, dependiente de horarios.
+                    </td>
+                    <td>
+                        <ul>
+                            <li><a href="#">aerolineasficticias.com/vuelos</a></li>
+                            <li><a href="#">aerolineasficticias.com/ofertas</a></li>
+                            <li><a href="#">aerolineasficticias.com/equipaje</a></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span class="icon">🚌</span><b>Autobús</b><br>Flexible, conecta ciudades y pueblos.</td>
+                    <td>
+                        <b>Ventajas:</b> Barato, rutas variadas, permite equipaje moderado.<br>
+                        <b>Desventajas:</b> Más lento, dependiente del tráfico, menos cómodo en trayectos largos.
+                    </td>
+                    <td>
+                        <ul>
+                            <li><a href="#">autobusesficticios.com/billetes</a></li>
+                            <li><a href="#">autobusesficticios.com/horarios</a></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span class="icon">🚗</span><b>Coche Alquiler</b><br>Libertad total de movimiento.</td>
+                    <td>
+                        <b>Ventajas:</b> Flexibilidad de horarios y rutas, ideal para familias o grupos, equipaje sin restricciones.<br>
+                        <b>Desventajas:</b> Coste de alquiler, combustible, peajes y aparcamiento, necesidad de carnet.
+                    </td>
+                    <td>
+                        <ul>
+                            <li><a href="#">rentacar-ficticio.com/reservas</a></li>
+                            <li><a href="#">rentacar-ficticio.com/seguros</a></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span class="icon">🚆</span><b>Tren</b><br>Cómodo para trayectos medios y largos.</td>
+                    <td>
+                        <b>Ventajas:</b> Confort, vistas panorámicas, posibilidad de moverse a bordo, equipaje generoso.<br>
+                        <b>Desventajas:</b> Precio medio-alto, horarios fijos, menos flexible que el coche.
+                    </td>
+                    <td>
+                        <ul>
+                            <li><a href="#">trenesficticios.com/billetes</a></li>
+                            <li><a href="#">trenesficticios.com/horarios</a></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span class="icon">🚲</span><b>Bicicletas</b><br>Ecológico y saludable para distancias cortas.</td>
+                    <td>
+                        <b>Ventajas:</b> Sin emisiones, económico, ejercicio físico, fácil aparcamiento.<br>
+                        <b>Desventajas:</b> Limitado por el clima, esfuerzo físico, poca capacidad de equipaje.
+                    </td>
+                    <td>
+                        <ul>
+                            <li><a href="#">bicisficticias.com/alquiler</a></li>
+                            <li><a href="#">bicisficticias.com/estaciones</a></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span class="icon">⛴️</span><b>Ferrys</b><br>Viajes por mar, ideal para islas.</td>
+                    <td>
+                        <b>Ventajas:</b> Permite llevar vehículos, vistas al mar, equipaje voluminoso.<br>
+                        <b>Desventajas:</b> Lento, dependiente del clima, horarios limitados.
+                    </td>
+                    <td>
+                        <ul>
+                            <li><a href="#">ferrysficticios.com/billetes</a></li>
+                            <li><a href="#">ferrysficticios.com/horarios</a></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span class="icon">🚕</span><b>Taxis</b><br>Servicio puerta a puerta, urbano y rápido.</td>
+                    <td>
+                        <b>Ventajas:</b> Comodidad, rapidez, servicio 24h, equipaje moderado.<br>
+                        <b>Desventajas:</b> Precio elevado, limitado a trayectos urbanos, capacidad limitada.
+                    </td>
+                    <td>
+                        <ul>
+                            <li><a href="#">taxisficticios.com/reservas</a></li>
+                            <li><a href="#">taxisficticios.com/tarifas</a></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span class="icon">🚉</span><b>Cercanías</b><br>Conecta ciudades y suburbios.</td>
+                    <td>
+                        <b>Ventajas:</b> Frecuente, económico, ideal para desplazamientos diarios, equipaje de mano.<br>
+                        <b>Desventajas:</b> Menos cómodo en horas punta, limitado a áreas metropolitanas.
+                    </td>
+                    <td>
+                        <ul>
+                            <li><a href="#">cercaniasficticias.com/billetes</a></li>
+                            <li><a href="#">cercaniasficticias.com/horarios</a></li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
